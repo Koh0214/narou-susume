@@ -1,0 +1,16 @@
+= form_for @osusume do |f|
+  - if @osusume.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@osusume.errors.count, "error")} prohibited this osusume from being saved:"
+      %ul
+        - @osusume.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :short-title
+    = f.text_field :short-title
+  .actions
+    = f.submit 'Save'

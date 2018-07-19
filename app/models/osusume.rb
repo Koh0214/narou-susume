@@ -1,0 +1,2 @@
+class Osusume < ApplicationRecord
+end

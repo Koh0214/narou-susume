@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @osusume.title
+%p
+  %b Short-title:
+  = @osusume.short-title
+
+= link_to 'Edit', edit_osusume_path(@osusume)
+\|
+= link_to 'Back', osusumes_path

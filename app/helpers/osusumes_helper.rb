@@ -1,0 +1,2 @@
+module OsusumesHelper
+end
