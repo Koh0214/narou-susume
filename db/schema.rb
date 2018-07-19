@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_19_031832) do
+ActiveRecord::Schema.define(version: 2018_07_19_032024) do
+
+  create_table "novels", force: :cascade do |t|
+    t.text "title"
+    t.text "description"
+    t.text "url"
+    t.integer "like"
+    t.integer "osusume_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["osusume_id"], name: "index_novels_on_osusume_id"
+  end
 
   create_table "osusumes", force: :cascade do |t|
     t.string "title"

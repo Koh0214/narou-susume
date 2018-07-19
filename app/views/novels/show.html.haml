@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @novel.title
+%p
+  %b Description:
+  = @novel.description
+%p
+  %b Url:
+  = @novel.url
+%p
+  %b Like:
+  = @novel.like
+%p
+  %b Osusume:
+  = @novel.osusume
+
+= link_to 'Edit', edit_novel_path(@novel)
+\|
+= link_to 'Back', novels_path

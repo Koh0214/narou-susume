@@ -1,0 +1,29 @@
+%h1 Listing novels
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Description
+      %th Url
+      %th Like
+      %th Osusume
+      %th
+      %th
+      %th
+
+  %tbody
+    - @novels.each do |novel|
+      %tr
+        %td= novel.title
+        %td= novel.description
+        %td= novel.url
+        %td= novel.like
+        %td= novel.osusume
+        %td= link_to 'Show', novel
+        %td= link_to 'Edit', edit_novel_path(novel)
+        %td= link_to 'Destroy', novel, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Novel', new_novel_path

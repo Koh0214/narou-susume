@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+  description: MyText
+  url: MyText
+  like: 1
+  osusume: one
+
+two:
+  title: MyText
+  description: MyText
+  url: MyText
+  like: 1
+  osusume: two
