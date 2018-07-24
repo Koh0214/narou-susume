@@ -46,6 +46,8 @@ gem 'font-awesome-rails'
 gem 'meta-tags'
 gem 'google-analytics-rails'
 
+gem 'meta_request', group: :development
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
