@@ -64,6 +64,43 @@ class OsusumesController < ApplicationController
     end
   end
 
+  def get_novel_info
+    require 'net/http'
+
+    # 参考URL https://qiita.com/awakia/items/bd8c1385115df27c15fa
+    # TODO APIが死んだ時とかに、単純に500が返ってきて、javascriptエラーになるけどそれで良いのかな？
+    novel_code = params[:url].gsub("https://ncode.syosetu.com/", "").gsub("http://ncode.syosetu.com/", "").gsub("/", "")
+    request_url = "https://api.syosetu.com/novelapi/api/?out=json&of=t-s-w&ncode=" + novel_code
+
+    api_response = Net::HTTP.get(URI.parse(request_url))
+    novel_info = JSON.parse(api_response)
+
+    # 入力されたURLが対応したURLだった場合、allcount(取得小説数)が1となる
+    # そうじゃない場合はnullを入れて、javascriptの方でエラーを出す。TODO ここでのnullはundefinedになっているが、結果的に望む動作をしている。
+    if novel_info[0]["allcount"] == 1
+      @novel_title = novel_info[1]["title"]
+      @novel_description = novel_info[1]["story"]
+    else
+      @novel_title = null
+      @novel_description = null
+    end
+
+
+    # TODO ハーメルンとかをMechanizeでスクレイピングする場合を入れる
+    # 暫定的にハーメルンから取得してみたけど、クラスssがたくさんありすぎて大量に取得する状態になっている。
+    # harmeln_url = "https://syosetu.org/novel/145355/"
+    # agent = Mechanize.new
+    # agent.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    # page = agent.get(harmeln_url)
+    # @novel_title = page.at('title').inner_text
+    # @novel_description = page.search('.ss.ss').inner_text
+    #
+    # respond_to do |format|
+    #   format.js
+    # end
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_osusume

@@ -17,3 +17,31 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(document).on('turbolinks:load',function(){
+
+  // $("#get-novel-info-button").click(function(){
+  $("#modal-novel-url").change(function(){
+      if ($("#modal-novel-url").val() != "" ) {
+        $.ajax({
+            url: "get_novel_info",
+            type: "GET",
+            data: { url : $("#modal-novel-url").val() },
+            dataType: "html",
+            success: function(data) {
+                console.log('success');
+                console.log(data);
+                // app/views/osusumes/scraping_novel.js.erb
+                //上記ファイルの中身を文字列"delimiter"で分ける
+                var split_datas = data.split("delimiter");
+                $("#modal-novel-title").val(split_datas[0]);
+                $("#modal-novel-description").val(split_datas[1]);
+            },
+            error: function(data) {
+                console.log('error');
+                alert("URLが不正、もしくはこのURLには対応していません。");
+            }
+        });
+      }
+  });
+});
