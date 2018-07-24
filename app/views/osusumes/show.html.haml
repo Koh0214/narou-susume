@@ -5,16 +5,17 @@
     -# .card-title
     .h4.font-weight-bold.m-2
       『#{@osusume.short_title}』のおすすめ
-  - @novels.each_with_index do |novel, index|
-    = link_to novel_path(novel) do
-      = render partial: "novel-card", locals: { novel: novel, index: index}
+  #novel-cards
+    - @novels.each do |novel|
+      = link_to novel_path(novel) do
+        = render partial: "novel-card", locals: { novel: novel }
 
   .row.m-3
     / 切り替えボタンの設定
     %button.btn.btn-primary.btn-add-novel{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button"}
       = fa_icon 'pencil'
       小説を追加する
-    = render partial: "add-novel-modal", locals: { novel: @novel, matome: @matome }
+    = render partial: "add-novel-modal", locals: { novel: @novel }
 
 %p
   %b Title:
