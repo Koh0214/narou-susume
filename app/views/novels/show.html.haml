@@ -10,6 +10,9 @@
   .card.text-muted.mt-1.mb-2.p-2.border-0
     #{@novel.description}
 
+  %hr
+  【コメント】
+
   #comment-cards
     - @comments.each do |comment|
       = render partial: "comment-card", locals: { comment: comment}
