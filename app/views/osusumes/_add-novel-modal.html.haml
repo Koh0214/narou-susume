@@ -5,26 +5,27 @@
         -# .modal-header
         -#   %button.close{"aria-label" => "閉じる", "data-dismiss" => "modal", :type => "button"}
         -#     .pt-3{"aria-hidden" => "true"} ×
-        .modal-body
+        .modal-body.pt-1
           %button.close{"aria-label" => "閉じる", "data-dismiss" => "modal", :type => "button"}
-            .pt-3{"aria-hidden" => "true"} ×
-          .row
-            .mx-auto.mt-4
-              = form_for novel , :remote => true do |f|
-                .form-group
-                  = f.label :"小説アドレス（小説名・あらすじをアドレスから自動入力します）"
-                  = f.text_field :url, placeholder:"小説アドレス", required: "required", id: "modal-novel-url", class: "form-control"
-                %hr
-                -# .button.btn.btn-primary#get-novel-info-button
-                -#   URL読み込み
-                -# .small.text-muted.mb-4
-                -#   ※URL入力後右の「URL読み込み」ボタンを押してください
-                .form-group
-                  = f.label :小説名, class: "mb-1"
-                  = f.text_field :title, placeholder:"小説名", id: "modal-novel-title", required: "required", class: 'form-control'
-                .form-group
-                  = f.label :あらすじ, class: "mb-1"
-                  = f.text_area :description, :placeholder=>'あらすじ', id: "modal-novel-description", class: "d-block under-comment-text", required: "required"
-                = f.hidden_field :osusume_id, :value => @osusume.id
-                .m-3
-                  = f.submit "小説を追加する", class: "btn btn-primary px-5 mx-auto d-block", data: { disable_with: "小説を追加する"}
+            .pb-2{"aria-hidden" => "true"} ×
+          -# .row
+          .mx-auto.mt-4
+            = form_for novel , :remote => true do |f|
+              .form-group
+                = f.label :"小説アドレス"
+                = f.label :"（小説名・あらすじを自動入力します）"
+                = f.text_field :url, placeholder:"小説家になろうアドレス", required: "required", id: "modal-novel-url", class: "form-control"
+              %hr
+              -# .button.btn.btn-primary#get-novel-info-button
+              -#   URL読み込み
+              -# .small.text-muted.mb-4
+              -#   ※URL入力後右の「URL読み込み」ボタンを押してください
+              .form-group
+                = f.label :小説名, class: "mb-1"
+                = f.text_field :title, placeholder:"小説名", id: "modal-novel-title", required: "required", class: 'form-control'
+              .form-group
+                = f.label :あらすじ, class: "mb-1"
+                = f.text_area :description, :placeholder=>'あらすじ', id: "modal-novel-description", class: "d-block add-novel-modal-description w-100", required: "required"
+              = f.hidden_field :osusume_id, :value => @osusume.id
+              .m-3
+                = f.submit "小説を追加する", class: "btn btn-primary px-5 mx-auto d-block", data: { disable_with: "小説を追加する"}
