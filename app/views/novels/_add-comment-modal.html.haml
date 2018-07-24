@@ -1,0 +1,30 @@
+.container
+  #myModal.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog.modal-lg{:role => "document"}
+      .modal-content
+        -# .modal-header
+        -#   %button.close{"aria-label" => "閉じる", "data-dismiss" => "modal", :type => "button"}
+        -#     .pt-3{"aria-hidden" => "true"} ×
+        .modal-body
+          %button.close{"aria-label" => "閉じる", "data-dismiss" => "modal", :type => "button"}
+            .pt-3{"aria-hidden" => "true"} ×
+          .row
+            .mx-auto.mt-4
+              = form_for comment , :remote => true do |f|
+                -# .form-group
+                -#   = f.label :"小説アドレス（小説名・あらすじをアドレスから自動入力します）"
+                -#   = f.text_field :url, placeholder:"小説アドレス", required: "required", id: "modal-novel-url", class: "form-control"
+                %hr
+                -# .button.btn.btn-primary#get-novel-info-button
+                -#   URL読み込み
+                -# .small.text-muted.mb-4
+                -#   ※URL入力後右の「URL読み込み」ボタンを押してください
+                .form-group
+                  = f.label :名前, class: "mb-1"
+                  = f.text_field :name, placeholder:"名前", id: "comment-name", required: "required", class: 'form-control'
+                .form-group
+                  = f.label :コメント, class: "mb-1"
+                  = f.text_area :comment, :placeholder=>'コメント', id: "comment-comment", class: "d-block under-comment-text", required: "required"
+                = f.hidden_field :novel_id, :value => @novel.id
+                .m-3
+                  = f.submit "コメントする", class: "btn btn-primary px-5 mx-auto d-block", data: { disable_with: "コメントする"}
