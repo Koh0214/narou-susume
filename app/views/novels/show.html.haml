@@ -7,12 +7,12 @@
       .h5.font-weight-bold.m-2
         #{@novel.title}
         .fa.fa-external-link
-  .card.text-muted.mt-1.mb-2.p-2.border-0
+  .card.text-muted.mt-1.mb-0.p-2.border-0
     #{@novel.description}
 
   %hr
-  【コメント】
 
+  【コメント】
   #comment-cards
     - @comments.each do |comment|
       = render partial: "comment-card", locals: { comment: comment}
@@ -27,22 +27,5 @@
   -#     コメントする
   -#   = render partial: "add-comment-modal", locals: { comment: @comment }
 
-%p
-  %b Title:
-  = @novel.title
-%p
-  %b Description:
-  = @novel.description
-%p
-  %b Url:
-  = @novel.url
-%p
-  %b Like:
-  = @novel.like
-%p
-  %b Osusume:
-  = @novel.osusume
 
-= link_to 'Edit', edit_novel_path(@novel)
-\|
-= link_to 'Back', novels_path
+= link_to 'Home', root_path
