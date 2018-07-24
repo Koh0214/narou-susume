@@ -1,0 +1,11 @@
+.container
+  #myModal.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog.modal-lg{:role => "document"}
+      .modal-content
+        -# .modal-header
+        -#   %button.close{"aria-label" => "閉じる", "data-dismiss" => "modal", :type => "button"}
+        -#     .pt-3{"aria-hidden" => "true"} ×
+        .modal-body
+          %button.close{"aria-label" => "閉じる", "data-dismiss" => "modal", :type => "button"}
+            .pt-3{"aria-hidden" => "true"} ×
+          = render partial: "comment-form", locals: { comment: comment}

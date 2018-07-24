@@ -10,6 +10,9 @@ class NovelsController < ApplicationController
   # GET /novels/1
   # GET /novels/1.json
   def show
+    @novel = Novel.where(:id => params[:id]).first
+    @comment = Comment.new
+    @comments = @novel.comments
   end
 
   # GET /novels/new

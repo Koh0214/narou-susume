@@ -1,21 +1,31 @@
 %p#notice= notice
 
-%p
-  %b Title:
-  = @novel.title
-%p
-  %b Description:
-  = @novel.description
-%p
-  %b Url:
-  = @novel.url
-%p
-  %b Like:
-  = @novel.like
-%p
-  %b Osusume:
-  = @novel.osusume
+.container.p-0
+  .card.mt-1.mb-2.border-0
+    -# .card-title
+    = link_to @novel.url, target: "_blank"  do
+      .h5.font-weight-bold.m-2
+        #{@novel.title}
+        .fa.fa-external-link
+  .card.text-muted.mt-1.mb-0.p-2.border-0
+    #{@novel.description}
 
-= link_to 'Edit', edit_novel_path(@novel)
-\|
-= link_to 'Back', novels_path
+  %hr
+
+  【コメント】
+  #comment-cards
+    - @comments.each do |comment|
+      = render partial: "comment-card", locals: { comment: comment}
+
+  = render partial: "comment-form", locals: { comment: @comment}
+
+-# TODO modalをつけるかどうかを判断
+  -# .row.m-3
+  -#   / 切り替えボタンの設定
+  -#   %button.btn.btn-primary.btn-add-novel{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button"}
+  -#     = fa_icon 'pencil'
+  -#     コメントする
+  -#   = render partial: "add-comment-modal", locals: { comment: @comment }
+
+
+= link_to 'Home', root_path
