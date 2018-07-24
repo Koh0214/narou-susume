@@ -10,33 +10,19 @@
   .card.text-muted.mt-1.mb-2.p-2.border-0
     #{@novel.description}
 
-  - @comments.each do |comment|
-    name #{comment.name}
-    %br
-    comment #{comment.comment}
-    %hr
-  -# #novel-cards
-  -#   - @novels.each do |novel|
-  -#     = render partial: "novel-card", locals: { novel: novel }
-  .row
-    .mx-auto.mt-4
-      = form_for @comment do |f|
-        .form-group
-          = f.label :名前, class: "mb-1"
-          = f.text_field :name, placeholder:"名前", id: "comment-name", required: "required", class: 'form-control'
-        .form-group
-          = f.label :コメント, class: "mb-1"
-          = f.text_area :comment, :placeholder=>'コメント', id: "comment-comment", class: "d-block under-comment-text", required: "required"
-        = f.hidden_field :novel_id, :value => @novel.id
-        .m-3
-          = f.submit "コメントする", class: "btn btn-primary px-5 mx-auto d-block", data: { disable_with: "コメントする"}
+  #comment-cards
+    - @comments.each do |comment|
+      = render partial: "comment-card", locals: { comment: comment}
 
-  .row.m-3
-    / 切り替えボタンの設定
-    %button.btn.btn-primary.btn-add-novel{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button"}
-      = fa_icon 'pencil'
-      コメントする
-    = render partial: "add-comment-modal", locals: { comment: @comment }
+  = render partial: "comment-form", locals: { comment: @comment}
+
+-# TODO modalをつけるかどうかを判断
+  -# .row.m-3
+  -#   / 切り替えボタンの設定
+  -#   %button.btn.btn-primary.btn-add-novel{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button"}
+  -#     = fa_icon 'pencil'
+  -#     コメントする
+  -#   = render partial: "add-comment-modal", locals: { comment: @comment }
 
 %p
   %b Title:
