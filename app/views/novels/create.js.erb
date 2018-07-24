@@ -1,0 +1,7 @@
+$("<%= escape_javascript(render partial: '/osusumes/novel-card', locals: { novel: @novel }) %>").appendTo("#novel-cards");
+
+$('form').find("textarea, :text, select").val("").end().find(":checked").prop("checked", false);
+
+setTimeout(function(){
+  alert("小説情報が正常に追加されました！");
+},150);

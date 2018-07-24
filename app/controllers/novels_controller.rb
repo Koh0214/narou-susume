@@ -30,6 +30,7 @@ class NovelsController < ApplicationController
       if @novel.save
         format.html { redirect_to root_path, notice: 'Novel was successfully created.' }
         format.json { render :show, status: :created, location: @novel }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @novel.errors, status: :unprocessable_entity }
