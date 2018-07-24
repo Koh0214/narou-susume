@@ -1,12 +1,13 @@
-.row
-  .mx-auto.mt-4
-    = form_for comment do |f|
-      .form-group
-        = f.label :名前, class: "mb-1"
-        = f.text_field :name, placeholder:"名前", id: "comment-name", required: "required", class: 'form-control w-100'
-      .form-group
-        = f.label :コメント, class: "mb-1"
-        = f.text_area :comment, :placeholder=>'コメント', id: "comment-comment", class: "d-block w-100", required: "required", style: "height: 80px;"
-      = f.hidden_field :novel_id, :value => @novel.id
-      .m-3
-        = f.submit "コメントする", class: "btn btn-primary px-5 mx-auto d-block", data: { disable_with: "コメントする"}
+.container
+  .row
+    .mx-auto.mt-4
+      = form_for comment, :remote => true do |f|
+        .form-group
+          = f.label :名前, class: "mb-1"
+          = f.text_field :name, placeholder:"名前", id: "comment-name", required: "required", class: 'form-control w-100'
+        .form-group
+          = f.label :コメント, class: "mb-1"
+          = f.text_area :comment, :placeholder=>'コメント', id: "comment-comment", class: "d-block w-100", required: "required", style: "height: 80px;"
+        = f.hidden_field :novel_id, :value => @novel.id
+        .m-3
+          = f.submit "コメントする", class: "btn btn-primary px-5 mx-auto d-block", data: { disable_with: "コメントする"}
