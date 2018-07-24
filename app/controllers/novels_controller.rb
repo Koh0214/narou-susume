@@ -28,7 +28,7 @@ class NovelsController < ApplicationController
 
     respond_to do |format|
       if @novel.save
-        format.html { redirect_to @novel, notice: 'Novel was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Novel was successfully created.' }
         format.json { render :show, status: :created, location: @novel }
       else
         format.html { render :new }

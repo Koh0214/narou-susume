@@ -10,6 +10,9 @@ class OsusumesController < ApplicationController
   # GET /osusumes/1
   # GET /osusumes/1.json
   def show
+    @osusume = Osusume.where(:id => params[:id]).first
+    @novels = @osusume.novels
+    @novel = Novel.new
   end
 
   # GET /osusumes/new
@@ -69,6 +72,6 @@ class OsusumesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def osusume_params
-      params.require(:osusume).permit(:title, :short-title)
+      params.require(:osusume).permit(:title, :short_title)
     end
 end
