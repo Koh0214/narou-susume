@@ -4,7 +4,7 @@
       = form_for comment, :remote => true do |f|
         .form-group
           = f.label :名前, class: "mb-1"
-          = f.text_field :name, placeholder:"名前", id: "comment-name", required: "required", class: 'form-control w-100'
+          = f.text_field :name, value: "なろう好き", placeholder:"名前", id: "comment-name", required: "required", class: 'form-control w-100'
         .form-group
           = f.label :コメント, class: "mb-1"
           = f.text_area :comment, :placeholder=>'コメント', id: "comment-comment", class: "d-block w-100", required: "required", style: "height: 80px;"
