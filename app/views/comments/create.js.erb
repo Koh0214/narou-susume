@@ -2,6 +2,6 @@ $("<%= escape_javascript(render partial: '/novels/comment-card', locals: { comme
 
 $('form').find("textarea, :text, select").val("").end().find(":checked").prop("checked", false);
 
-// setTimeout(function(){
-//   alert("コメントが正常に追加されました！");
-// },150);
+setTimeout(function(){
+  alert("コメントしました！");
+},150);
