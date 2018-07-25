@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "osusumes/get_novel_info"
+  get "osusumes/like"
   resources :comments
   resources :novels
   resources :osusumes
