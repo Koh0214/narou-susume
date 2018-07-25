@@ -12,4 +12,7 @@
           #{novel.comments.count}
       .fa.fa-heart-o
         %span{style: "font-size: 18px"}
+        - if novel.like != nil
           #{novel.like}
+        - else
+          0
