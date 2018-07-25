@@ -1,20 +1,25 @@
 .card.my-2.mx-0.border-0
-  name #{comment.name}
-  %br
-  comment #{comment.comment}
-  .fa.fa-thumbs-up
-    - if comment.up != nil
-      #{comment.up}
-    - else
-      0
-  .fa.fa-thumbs-down
-    - if comment.down != nil
-      #{comment.down}
-    - else
-      0
-  -# %a.btn.d-flex
-  -#   %i.fa.fa-power-off.d-flex
-  %p
-    %a.comment-rating-button.comment-rating-button-up.d-inline-flex.justify-content-center.font-weight-bold{} +
-  %p
-    %a.comment-rating-button.comment-rating-button-down.d-inline-flex.justify-content-center.font-weight-bold{} -
+  .text-muted.small.p-2
+    name: #{comment.name}
+  .font-weight-bold.p-2
+    #{comment.comment}
+  .container.mb-0.mt-3
+    .row.mx-auto.d-flex.justify-content-center
+      %p.mb-1
+        %a.comment-rating-button.comment-rating-button-up.d-inline-flex.justify-content-center.font-weight-bold{} +
+        %br
+        %span{class: "comment-count comment-count-up"}
+          - if comment.up != nil
+            #{comment.up}
+          - else
+            0
+      .comment-rating-bar.justify-content-center.m-2
+        .comment-rating-bar-up
+      %p.mb-1
+        %a.comment-rating-button.comment-rating-button-down.d-inline-flex.justify-content-center.font-weight-bold{} -
+        %br
+        %span{class: "comment-count comment-count-down"}
+          - if comment.down != nil
+            #{comment.down}
+          - else
+            0
