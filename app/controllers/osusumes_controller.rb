@@ -101,6 +101,17 @@ class OsusumesController < ApplicationController
 
   end
 
+  def like
+      @novel = Novel.find_by(id: params[:id])
+
+      if @novel.like == nil
+        @novel.update(like: 1)
+      else
+        @novel.update(like: @novel.like + 1)
+      end
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_osusume
