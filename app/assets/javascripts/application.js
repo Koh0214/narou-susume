@@ -50,16 +50,21 @@ $(document).on('turbolinks:load',function(){
 $(document).on('turbolinks:load',function(){
 
   $(".novel-card-like").click(function(){
-      $.ajax({
-          url: "like",
-          data: { id : parseInt($(this).siblings(".novel-id").text()) },
-          dataType: "html",
-          success: function(data) {
-              console.log('いいね');
-          },
-          error: function(data) {
-              console.log('いいねをつけるのに失敗しています');
-          }
-      });
+    $(this).removeClass("fa-heart-o").addClass("fa-heart");
+    //いいね数プラス1
+    var old_like_count = parseInt($(this).find(".novel-like-count").text());
+    $(this).find(".novel-like-count").text(old_like_count + 1);
+    console.log("click");
+    $.ajax({
+        url: "like",
+        data: { id : parseInt($(this).siblings(".novel-id").text()) },
+        dataType: "html",
+        success: (data) => {
+          console.log("正常にいいね完了")
+        },
+        error: function(data) {
+          console.log('いいねをつけるのに失敗しています');
+        }
+    });
   });
 });
