@@ -1,12 +1,15 @@
 = link_to novel_path(novel) do
   .card.mt-1.mb-2.border-0
-    .card-title.h5.p-2.m-0
+    .card-title.h6.p-2.m-0
       #{novel.title}
     .card-footer
       .btn.btn-outline-secondary.description.p-1
         ▽あらすじ
       -# .card
       -#   #{novel.description}
+      .fa.fa-comments-o
+        %span{style: "font-size: 18px"}
+          #{novel.comments.count}
       .fa.fa-heart-o
         %span{style: "font-size: 18px"}
           #{novel.like}
