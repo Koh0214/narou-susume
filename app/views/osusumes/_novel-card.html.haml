@@ -11,10 +11,10 @@
       %span{style: "font-size: 18px"}
         #{novel.comments.count}
     .fa.fa-heart-o.novel-card-like
-      %span{style: "font-size: 18px"}
-      - if novel.like != nil
-        #{novel.like}
-      - else
-        0
+      %span{class: "novel-like-count"}
+        - if novel.like != nil
+          #{novel.like}
+        - else
+          0
     .novel-id{style: "display:none"}
       #{novel.id}
