@@ -22,19 +22,19 @@
   background: #73DCFF;
   box-shadow: 0 3px 0 #2a82a3;
   color: white !important;
-  .comment-rating-button-up:hover {
-    background: #2a82a3 !important;
-  }
 }
+.comment-rating-button-up:hover {
+  background: #2a82a3 !important;
+}
+
 .comment-rating-button-down{
   background: #BDBDAE;
   box-shadow: 0 3px 0 #79796A;
   color: white !important;
-  .comment-rating-button-down:hover {
-    background: #79796A !important;
-  }
 }
-
+.comment-rating-button-down:hover {
+  background: #79796A !important;
+}
 
 .comment-rating-bar{
   border-radius: 20px;
