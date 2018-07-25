@@ -1,3 +1,36 @@
 // Place all the styles related to the Novels controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.comment-rating-button {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 35px;
+  padding-top: 10px;
+
+  // ユーザーがボタンをハイライトできないようにする
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+.comment-rating-button-up{
+  background: #73DCFF;
+  box-shadow: 0 3px 0 #2a82a3;
+  color: white !important;
+}
+.comment-rating-button-up:hover {
+	background: #2a82a3 !important;
+}
+.comment-rating-button-down{
+  background: #BDBDAE;
+  box-shadow: 0 3px 0 #79796A;
+  color: white !important;
+}
+.comment-rating-button-down:hover {
+	background: #79796A !important;
+}
