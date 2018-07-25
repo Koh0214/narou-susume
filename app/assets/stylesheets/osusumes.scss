@@ -23,17 +23,22 @@ body{
   }
   .fa-comments-o{
     font-size: 20px;
-    // color: red;
     position: absolute;
     bottom: 5px;
     left: 85px;
   }
-  .fa-heart-o{
+  .novel-card-like{
     font-size: 20px;
-    color: red;
     position: absolute;
     bottom: 5px;
     right: 50px;
+  }
+  .fa-heart-o{
+    color: grey;
+  }
+  .fa-heart{
+    color: red;
+    pointer-events: none;
   }
 }
 
