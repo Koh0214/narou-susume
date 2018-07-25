@@ -2,3 +2,13 @@
   name #{comment.name}
   %br
   comment #{comment.comment}
+  .fa.fa-like
+    - if comment.up != nil
+      up #{comment.up}
+    - else
+      up 0
+  .fa.fa-dislike
+    - if comment.down != nil
+      down #{comment.down}
+    - else
+      down 0
