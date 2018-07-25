@@ -50,14 +50,12 @@ $(document).on('turbolinks:load',function(){
 $(document).on('turbolinks:load',function(){
 
   $(".novel-card-like").click(function(){
-      console.log($(this).siblings(".novel-id").text());
       $.ajax({
           url: "like",
-          type: "GET",
-          data: { id : 1 },
+          data: { id : parseInt($(this).siblings(".novel-id").text()) },
           dataType: "html",
           success: function(data) {
-              console.log('success');
+              console.log('いいね');
           },
           error: function(data) {
               console.log('いいねをつけるのに失敗しています');
