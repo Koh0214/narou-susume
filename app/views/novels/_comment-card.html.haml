@@ -2,3 +2,13 @@
   name #{comment.name}
   %br
   comment #{comment.comment}
+  .fa.fa-thumbs-up
+    - if comment.up != nil
+      #{comment.up}
+    - else
+      0
+  .fa.fa-thumbs-down
+    - if comment.down != nil
+      #{comment.down}
+    - else
+      0
