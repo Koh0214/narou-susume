@@ -65,6 +65,24 @@ class NovelsController < ApplicationController
     end
   end
 
+  def comment_count_up
+      @comment = Comment.find_by(id: params[:id])
+      if @comment.up == nil
+        @comment.update(up: 1)
+      else
+        @comment.update(up: @comment.up + 1)
+      end
+  end
+
+  def comment_count_down
+      @comment = Comment.find_by(id: params[:id])
+      if @comment.down == nil
+        @comment.update(down: 1)
+      else
+        @comment.update(down: @comment.down + 1)
+      end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_novel
