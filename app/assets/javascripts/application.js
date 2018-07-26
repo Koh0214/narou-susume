@@ -48,7 +48,6 @@ $(document).on('turbolinks:load',function(){
 
 
 $(document).on('turbolinks:load',function(){
-
   $(".novel-card-like").click(function(){
     $(this).removeClass("fa-heart-o").addClass("fa-heart");
     //いいね数プラス1
@@ -58,6 +57,31 @@ $(document).on('turbolinks:load',function(){
     $.ajax({
         url: "like",
         data: { id : parseInt($(this).siblings(".novel-id").text()) },
+        dataType: "html",
+        success: (data) => {
+          console.log("正常にいいね完了")
+        },
+        error: function(data) {
+          console.log('いいねをつけるのに失敗しています');
+        }
+    });
+  });
+});
+
+
+//upボタン押された時
+$(document).on('turbolinks:load',function(){
+  $(".comment-rating-button-up").click(function(){
+    //upを押された時に、upとdownどちらも動かないようにクラスを付け替える  TODO downのセレクターがダサいから直す。
+    $(this).removeClass("comment-rating-button-up").addClass("comment-rating-button-up-pushed");
+    var down_button = $(this).parent().next().next().children(".comment-rating-button-down");
+    down_button.removeClass("comment-rating-button-down").addClass("comment-rating-button-down-pushed");
+
+    var old_up_count = parseInt($(this).siblings(".comment-count-up").text());
+    $(this).siblings(".comment-count-up").text(old_up_count + 1);
+    $.ajax({
+        url: "comment_count_up",
+        data: { id : parseInt($(this).parent().siblings(".comment-id").text()) },
         dataType: "html",
         success: (data) => {
           console.log("正常にいいね完了")
