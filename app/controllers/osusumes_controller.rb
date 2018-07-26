@@ -4,7 +4,7 @@ class OsusumesController < ApplicationController
   # GET /osusumes
   # GET /osusumes.json
   def index
-    @osusumes = Osusume.all
+    @osusumes = Osusume.all.reverse_order
   end
 
   # GET /osusumes/1
