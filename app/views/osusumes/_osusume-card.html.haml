@@ -1,0 +1,13 @@
+.card.mt-1.mb-2.border-0
+  = link_to osusume_path(osusume) do
+    .card-title.h6.p-2.m-0
+      『#{osusume.short_title}』のおすすめ
+      .fa.fa-external-link
+  .card-footer
+    -# .btn.btn-outline-secondary.description.p-1
+    -#   ▽概要
+    -# .card
+    -#   #{osusume.description}
+    .fa.fa-book
+      %span{style: "font-size: 18px"}
+        #{osusume.novels.count}
