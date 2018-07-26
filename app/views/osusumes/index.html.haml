@@ -1,22 +1,6 @@
-%h1 Listing osusumes
-
-%table
-  %thead
-    %tr
-      %th Title
-      %th Short_title
-      %th
-      %th
-      %th
-
-  %tbody
-    - @osusumes.each do |osusume|
-      %tr
-        %td= osusume.title
-        %td= osusume.short_title
-        %td= link_to 'Show', osusume
-        %td= link_to 'Edit', edit_osusume_path(osusume)
-        %td= link_to 'Destroy', osusume, method: :delete, data: { confirm: 'Are you sure?' }
+#osusume-cards
+  - @osusumes.each do |osusume|
+    = render partial: "osusume-card", locals: { osusume: osusume }
 
 %br
 
