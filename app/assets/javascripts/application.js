@@ -72,7 +72,7 @@ $(document).on('turbolinks:load',function(){
 //upボタン押された時
 $(document).on('turbolinks:load',function(){
   $(".comment-rating-button-up").click(function(){
-    //upを押された時に、upとdownどちらも動かないようにクラスを付け替える  TODO downのセレクターがダサいから直す。
+    //upを押された時に、upとdownどちらも動かないようにクラスを付け替える  TODO セレクターがダサいから直す。
     $(this).removeClass("comment-rating-button-up").addClass("comment-rating-button-up-pushed");
     var down_button = $(this).parent().next().next().children(".comment-rating-button-down");
     down_button.removeClass("comment-rating-button-down").addClass("comment-rating-button-down-pushed");
@@ -92,3 +92,28 @@ $(document).on('turbolinks:load',function(){
     });
   });
 });
+
+//downボタン押された時
+$(document).on('turbolinks:load',function(){
+  $(".comment-rating-button-down").click(function(){
+    //downを押された時に、upとdownどちらも動かないようにクラスを付け替える  TODO セレクターがダサいから直す。
+    $(this).removeClass("comment-rating-button-down").addClass("comment-rating-button-down-pushed");
+    var up_button = $(this).parent().prev().prev().children(".comment-rating-button-up");
+    up_button.removeClass("comment-rating-button-up").addClass("comment-rating-button-up-pushed");
+
+    var old_down_count = parseInt($(this).siblings(".comment-count-down").text());
+    $(this).siblings(".comment-count-down").text(old_down_count + 1);
+
+    $.ajax({
+        url: "comment_count_down",
+        data: { id : parseInt($(this).parent().siblings(".comment-id").text()) },
+        dataType: "html",
+        success: (data) => {
+          console.log("正常にいいね完了")
+        },
+        error: function(data) {
+          console.log('いいねをつけるのに失敗しています');
+        }
+    });
+  });
+})
