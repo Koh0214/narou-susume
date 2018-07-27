@@ -22,18 +22,38 @@
   background: #73DCFF;
   box-shadow: 0 3px 0 #2a82a3;
   color: white !important;
+  &:hover{
+    background-color: #2a82a3 !important;
+  }
 }
-.comment-rating-button-up:hover {
-  background: #2a82a3 !important;
+.comment-rating-button-up-pushed{
+  background-color: #2a82a3 !important;
+  box-shadow: 0 3px 0 #2a82a3;
+  color: white !important;
+  pointer-events: none;
+  &:hover{
+    background-color: #2a82a3 !important;
+  }
 }
+
+
 
 .comment-rating-button-down{
   background: #BDBDAE;
   box-shadow: 0 3px 0 #79796A;
   color: white !important;
+  &:hover{
+    background-color: #79796A !important;
+  }
 }
-.comment-rating-button-down:hover {
-  background: #79796A !important;
+.comment-rating-button-down-pushed{
+  background-color: #79796A !important;
+  box-shadow: 0 3px 0 #79796A;
+  color: white !important;
+  pointer-events: none;
+  &:hover{
+    background-color: #79796A !important;
+  }
 }
 
 .comment-rating-bar{
@@ -42,8 +62,7 @@
   height: 25px;
   width: 200px;
   .comment-rating-bar-up{
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-radius: 20px;
     background-color: #73DCFF;
     height: 25px;
     width: 160px;

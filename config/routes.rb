@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get "osusumes/get_novel_info"
   get "osusumes/like"
+  get "novels/comment_count_up"
+  get "novels/comment_count_down"
   resources :comments
   resources :novels
   resources :osusumes
