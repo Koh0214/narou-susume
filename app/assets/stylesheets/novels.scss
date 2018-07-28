@@ -6,12 +6,12 @@
 
 .comment-rating-button {
   display: block;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  font-size: 35px;
-  padding-top: 10px;
-  margin-bottom: 4px;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 25px;
+  padding-top: 5px;
+  margin-bottom: 1px;
   // ユーザーがボタンのテキストをハイライトできないようにする
   -webkit-user-select:none;
   -moz-user-select:none;
@@ -20,7 +20,7 @@
 }
 .comment-rating-button-up{
   background: #73DCFF;
-  box-shadow: 0 3px 0 #2a82a3;
+  box-shadow: 0 2px 0 #2a82a3;
   color: white !important;
   &:hover{
     background-color: #2a82a3 !important;
@@ -28,7 +28,7 @@
 }
 .comment-rating-button-up-pushed{
   background-color: #2a82a3 !important;
-  box-shadow: 0 3px 0 #2a82a3;
+  box-shadow: 0 2px 0 #2a82a3;
   color: white !important;
   pointer-events: none;
   &:hover{
@@ -59,19 +59,19 @@
 .comment-rating-bar{
   border-radius: 20px;
   background-color: #DFDFD0;
-  height: 25px;
-  width: 200px;
+  height: 15px;
+  width: 150px;
   .comment-rating-bar-up{
     border-radius: 20px;
     background-color: #73DCFF;
-    height: 25px;
-    width: 160px;
+    height: 15px;
+    width: 100px;
   }
 }
 
 .comment-count{
-  font-size: 18px;
-  margin-left: 14px;
+  font-size: 12px;
+  margin-left: 8px;
 }
 .comment-count-up{
   color: #5DB2CD !important;
