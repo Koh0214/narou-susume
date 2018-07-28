@@ -12,7 +12,7 @@ class NovelsController < ApplicationController
   def show
     @novel = Novel.where(:id => params[:id]).first
     @comment = Comment.new
-    @comments = @novel.comments
+    @comments = @novel.comments.order(:id)
   end
 
   # GET /novels/new
