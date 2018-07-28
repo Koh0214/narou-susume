@@ -115,6 +115,12 @@ $(document).on('turbolinks:load',function(){
         data: { id : parseInt($(this).parent().siblings(".comment-id").text()) },
         dataType: "html",
         success: (data) => {
+          //TODO function get_up_down_rateに切り出ししたい
+          var up_count = parseInt($(this).parent().prev().prev().children(".comment-count-up").text());
+          var down_count = parseInt($(this).siblings(".comment-count-down").text());
+          var sum_count = up_count + down_count
+          var up_down_rate = ((up_count/sum_count)*100) + "%"
+          $(this).parent().prev().children(".comment-rating-bar-up").animate({width:up_down_rate},200);
           console.log("正常にいいね完了")
         },
         error: function(data) {
