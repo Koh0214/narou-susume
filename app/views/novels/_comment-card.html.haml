@@ -5,7 +5,7 @@
     #{comment.comment}
   .container.mb-0.mt-3
     .row.mx-auto.d-flex.justify-content-center
-      %p.mb-1
+      %p.mb-1.up-contents
         %a.comment-rating-button.comment-rating-button-up.d-inline-flex.justify-content-center.font-weight-bold{} +
         %br
         %span{class: "comment-count comment-count-up"}
@@ -22,7 +22,7 @@
         .comment-rating-bar.justify-content-center.m-2
           -# up, downがどちらも0の時は50%にする
           .comment-rating-bar-up{style: "width: 50%;"}
-      %p.mb-1
+      %p.mb-1.down-contents
         %a.comment-rating-button.comment-rating-button-down.d-inline-flex.justify-content-center.font-weight-bold{} -
         %br
         %span{class: "comment-count comment-count-down"}
