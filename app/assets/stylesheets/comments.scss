@@ -5,13 +5,13 @@
 
 // up_down_rate = 90%~
 .comment-level-5{
-  font-size: 140%;
+  font-size: 130%;
   font-weight: bold;
-  font: red;
+  color: red;
 }
 // up_down_rate = 70~90%
 .comment-level-4{
-  font-size: 120%;
+  font-size: 130%;
   font-weight: bold;
 }
 // up_down_rate = 50~70%
@@ -20,9 +20,8 @@
 }
 // up_down_rate = 30=50%
 .comment-level-2{
-
 }
 // up_down_rate = ~ 30%
 .comment-level-1{
-  font-size: 80%;
+  color: #777;
 }
