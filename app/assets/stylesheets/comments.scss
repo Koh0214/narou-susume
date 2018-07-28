@@ -1,3 +1,28 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// up_down_rate = 90%~
+.comment-level-5{
+  font-size: 140%;
+  font-weight: bold;
+  font: red;
+}
+// up_down_rate = 70~90%
+.comment-level-4{
+  font-size: 120%;
+  font-weight: bold;
+}
+// up_down_rate = 50~70%
+.comment-level-3{
+  font-weight: bold;
+}
+// up_down_rate = 30=50%
+.comment-level-2{
+
+}
+// up_down_rate = ~ 30%
+.comment-level-1{
+  font-size: 80%;
+}
