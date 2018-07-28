@@ -89,7 +89,7 @@ $(document).on('turbolinks:load',function(){
           var down_count = parseInt($(this).parent().next().next().children(".comment-count-down").text());
           var sum_count = up_count + down_count
           var up_down_rate = ((up_count/sum_count)*100) + "%"
-          $(this).parent().next().children(".comment-rating-bar-up").width(up_down_rate);
+          $(this).parent().next().children(".comment-rating-bar-up").animate({width:up_down_rate},200);
           console.log("正常にplus完了")
         },
         error: function(data) {
