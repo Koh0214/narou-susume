@@ -2,7 +2,7 @@
   .text-muted.small.p-2
     名前: #{comment.name}
   - up_down_rate = ((comment.up.to_f) / (comment.up.to_f + comment.down.to_f)) * 100
-  - if 90 < up_down_rate
+  - if    90 <= up_down_rate
     .p-2.comment.comment-level-5
       #{comment.comment}
   - elsif 70 <= up_down_rate  && up_down_rate < 90
