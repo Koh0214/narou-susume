@@ -1,31 +1,45 @@
 .card.my-2.mx-0.border-0
   .text-muted.small.p-2
-    name: #{comment.name}
-  .font-weight-bold.p-2
-    #{comment.comment}
-  .container.mb-0.mt-3
-    .row.mx-auto.d-flex.justify-content-center
-      %p.mb-1.up-contents
+    名前: #{comment.name}
+  - up_down_rate = ((comment.up.to_f) / (comment.up.to_f + comment.down.to_f)) * 100
+  - if 90 < up_down_rate
+    .p-2.comment.comment-level-5
+      #{comment.comment}
+  - elsif 70 <= up_down_rate  && up_down_rate < 90
+    .p-2.comment.comment-level-4
+      #{comment.comment}
+  - elsif 50 <= up_down_rate  && up_down_rate < 70
+    .p-2.comment.comment-level-3
+      #{comment.comment}
+  - elsif 30 <= up_down_rate  && up_down_rate < 50
+    .p-2.comment.comment-level-2
+      #{comment.comment}
+  - else
+    .p-2.comment.comment-level-1
+      #{comment.comment}
+  .container.mb-0.mt-3.pr-1
+    .row.mx-auto.d-flex.justify-content-end
+      %p.up-contents.mb-0
         %a.comment-rating-button.comment-rating-button-up.d-inline-flex.justify-content-center.font-weight-bold{} +
         %br
-        %span{class: "comment-count comment-count-up"}
+        %span{class: "comment-count comment-count-up mb-0"}
           - if comment.up != nil
             #{comment.up}
           - else
             0
       -# 0で割れないので、分母が0の時で場合分け
       - if (comment.up.to_f + comment.down.to_f) != 0
-        .comment-rating-bar.justify-content-center.m-2
+        .comment-rating-bar.justify-content-center.m-2.mt-3
           -# up, downの比率で青いバーの長さを決定する
           .comment-rating-bar-up{style: "width: #{( (comment.up.to_f) / (comment.up.to_f + comment.down.to_f) ) * 100}%;"}
       - else
         .comment-rating-bar.justify-content-center.m-2
           -# up, downがどちらも0の時は50%にする
           .comment-rating-bar-up{style: "width: 50%;"}
-      %p.mb-1.down-contents
+      %p.down-contents.mb-0
         %a.comment-rating-button.comment-rating-button-down.d-inline-flex.justify-content-center.font-weight-bold{} -
         %br
-        %span{class: "comment-count comment-count-down"}
+        %span{class: "comment-count comment-count-down mb-0"}
           - if comment.down != nil
             #{comment.down}
           - else
