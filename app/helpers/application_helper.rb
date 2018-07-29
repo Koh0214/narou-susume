@@ -1,8 +1,17 @@
 module ApplicationHelper
   #titleを動的に生成
-  # def title
-  #   title = @matome.title if @matome
-  # end
+  def title
+    title = "『#{@osusume.short_title}』のおすすめ" if @osusume
+  end
+
+  def keywords
+    if @osusume != nil
+      short_title = @osusume.short_title.to_s + ", " if @osusume
+      keywords = short_title + '小説家になろう, なろう, なろう小説, おすすめ, オススメ, まとめ, キュレーション, 共有'
+    else
+      keywords = '小説家になろう, なろう, なろう小説, おすすめ, オススメ, まとめ, キュレーション, 共有'
+    end
+  end
   #
   # #descriptionを動的に生成
   # def description
@@ -11,14 +20,13 @@ module ApplicationHelper
 
   def default_meta_tags
     {
-      site: 'なろうまとめ',
-      # title: title,
-      title: 'なろうのおすすめ',
+      site: 'なろう廃人のすすめ',
+      title: title,
       reverse: true,
       charset: 'utf-8',
       # description: description,
-      description: 'みんなで作る小説家になろうオススメランキングサイト',
-      keywords: '小説家になろう, なろう, なろう小説, おすすめ, オススメ, まとめ, なま, キュレーション, 共有',
+      description: 'みんなで作る「小説家になろう」のまとめサイト',
+      keywords: keywords,
       canonical: request.original_url,
       separator: ':',
       icon: [
