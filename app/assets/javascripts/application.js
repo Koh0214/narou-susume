@@ -114,11 +114,11 @@ $(document).on('turbolinks:load',function(){
           $(this).parents(".card").children(".comment").removeClass(function(index, className) {
               return (className.match(/\bcomment-level-\S+/g) || []).join(' ');
           }).addClass(comment_level);
-          
-          console.log("正常にplus完了")
+
+          console.log("正常にup完了")
         },
         error: function(data) {
-          console.log('plusをつけるのに失敗しています');
+          console.log('upをつけるのに失敗しています');
         }
     });
   });
@@ -144,12 +144,37 @@ $(document).on('turbolinks:load',function(){
           var up_count   = parseInt($(this).parent().parent().find(".up-contents").children(".comment-count-up").text());
           var down_count = parseInt($(this).parent().parent().find(".down-contents").children(".comment-count-down").text());
           var sum_count = up_count + down_count
-          var up_down_rate = ((up_count/sum_count)*100) + "%"
-          $(this).parent().prev().children(".comment-rating-bar-up").animate({width:up_down_rate},200);
-          console.log("正常にいいね完了")
+          var up_down_rate = ((up_count/sum_count)*100)
+          $(this).parent().prev().children(".comment-rating-bar-up").animate({width:up_down_rate + "%"},200);
+
+          switch(true) {
+              case 90 <= up_down_rate:
+                  var comment_level = "comment-level-5";
+                  break;
+              case 70 <= up_down_rate && up_down_rate < 90 :
+                  var comment_level = "comment-level-4";
+                  break;
+              case 50 <= up_down_rate && up_down_rate < 70 :
+                  var comment_level = "comment-level-3";
+                  break;
+              case 30 <= up_down_rate && up_down_rate < 50 :
+                  var comment_level = "comment-level-2";
+                  break;
+              case up_down_rate < 30 :
+                  var comment_level = "comment-level-1";
+                  break;
+              default:
+                  alert("0より小さいです");
+          }
+          //前方一致でクラスを削除  参考：jQueryの.removeClass()で「特定の文字列で始まるclass」をすべて削除する
+          $(this).parents(".card").children(".comment").removeClass(function(index, className) {
+              return (className.match(/\bcomment-level-\S+/g) || []).join(' ');
+          }).addClass(comment_level);
+
+          console.log("正常にdown完了")
         },
         error: function(data) {
-          console.log('いいねをつけるのに失敗しています');
+          console.log('downをつけるのに失敗しています');
         }
     });
   });
