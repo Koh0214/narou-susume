@@ -85,8 +85,8 @@ $(document).on('turbolinks:load',function(){
         dataType: "html",
         success: (data) => {
           //TODO function get_up_down_rateに切り出ししたい
-          var up_count   = parseInt($(this).parent().parent().find(".up-contents").children(".comment-count-up").text());
-          var down_count = parseInt($(this).parent().parent().find(".down-contents").children(".comment-count-down").text());
+          var up_count   = parseInt($(this).parents(".comment-bottom-content").children(".up-contents").children(".comment-count-up").text());
+          var down_count = parseInt($(this).parents(".comment-bottom-content").children(".down-contents").children(".comment-count-down").text());
           var sum_count = up_count + down_count
           var up_down_rate = ((up_count/sum_count)*100)
           $(this).parent().next().children(".comment-rating-bar-up").animate({width:up_down_rate + "%"},200);
@@ -141,8 +141,8 @@ $(document).on('turbolinks:load',function(){
         dataType: "html",
         success: (data) => {
           //TODO function get_up_down_rateに切り出ししたい
-          var up_count   = parseInt($(this).parent().parent().find(".up-contents").children(".comment-count-up").text());
-          var down_count = parseInt($(this).parent().parent().find(".down-contents").children(".comment-count-down").text());
+          var up_count   = parseInt($(this).parents(".comment-bottom-content").children(".up-contents").children(".comment-count-up").text());
+          var down_count = parseInt($(this).parents(".comment-bottom-content").children(".down-contents").children(".comment-count-down").text());
           var sum_count = up_count + down_count
           var up_down_rate = ((up_count/sum_count)*100)
           $(this).parent().prev().children(".comment-rating-bar-up").animate({width:up_down_rate + "%"},200);
