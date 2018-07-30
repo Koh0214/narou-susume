@@ -1,7 +1,7 @@
 module ApplicationHelper
   #titleを動的に生成
   def title
-    title = "『#{@osusume.short_title}』のおすすめ" if @osusume
+    title = "『#{@osusume.short_title}』のおすすめ小説" if @osusume
   end
 
   def keywords
