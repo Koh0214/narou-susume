@@ -16,6 +16,9 @@ body{
   // left: 85px;
 }
 
+.novel-description-in-osusume{
+  height: 50px;
+}
 
 // osusume#show
 // novel-card
@@ -34,8 +37,9 @@ body{
   .fa-comments-o{
     font-size: 20px;
     position: absolute;
-    bottom: 5px;
-    left: 85px;
+    bottom: 6px;
+    right: 130px;
+    color: grey;
   }
   .novel-card-like{
     font-size: 20px;
