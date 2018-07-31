@@ -200,11 +200,3 @@ $(document).on('turbolinks:load',function(){
     }
   })
 });
-
-$(document).on('turbolinks:load',function(){
-  $(".fa-angle-up").click(function(){
-    console.log("up to down");
-    $(this).siblings(".novel-description").animate({height: "100px"}, 1);
-    $(this).removeClass("fa-angle-up").addClass("fa-angle-down");
-  })
-});
