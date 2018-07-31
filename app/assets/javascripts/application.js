@@ -180,23 +180,32 @@ $(document).on('turbolinks:load',function(){
   });
 })
 
-//novels#show  あらすじの開閉
+//あらすじの開閉 osusumes#show, _novel-card
 $(document).on('turbolinks:load',function(){
-  $(".description-toggle").click(function(){
-    //開くとき
-    if ($(this).hasClass("fa-angle-down")) {
-      //heightをautoにする実装
-      //参考：https://stackoverflow.com/questions/5003220/animate-element-to-auto-height-with-jquery
-      var el = $(this).siblings(".novel-description");
-      curHeight = el.height();
-      autoHeight = el.css('height', 'auto').height();
-      el.height(curHeight).animate({height: autoHeight}, 200);
-      $(this).removeClass("fa-angle-down").addClass("fa-angle-up pushed");
+  $(".novel-description").click(function(){
+    //あらすじを一覧では50pxの高さ、小説個別画面では100pxの高さにした方が見やすいので以下のように実装
+    // osusumes#show
+    if ($(this).hasClass("novel-description-in-osusume")) {
+      var description_height = "50";
     }
-    //閉じるとき
+    // novel#show
     else {
-      $(this).siblings(".novel-description").animate({height: "100px"}, 200);
-      $(this).removeClass("fa-angle-up").addClass("fa-angle-down");
+      var description_height = "100";
+    }
+
+    //開く
+    if ($(this).height() == description_height) {
+      //heightをautoにする実装
+      curHeight = $(this).height();
+      autoHeight = $(this).css('height', 'auto').height();
+      $(this).height(curHeight).animate({height: autoHeight}, 150);
+      // $(this).siblings(".fa-angle-down").removeClass("fa-angle-down").addClass("fa-angle-up");
+      $(this).siblings(".fa-angle-down").removeClass("fa-angle-down").addClass("fa-angle-up");
+    }
+    //閉じる
+    else {
+      $(this).animate({height: description_height + "px"}, 150);
+      $(this).siblings(".fa-angle-up").removeClass("fa-angle-up").addClass("fa-angle-down");
     }
   })
 });
