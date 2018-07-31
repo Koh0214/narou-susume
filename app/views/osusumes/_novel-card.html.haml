@@ -1,7 +1,8 @@
 .card.mt-1.mb-2.border-0
-  = link_to novel_path(novel) do
+  = link_to novel_path(novel), target: "_blank"  do
     .card-title.h6.p-2.m-0
       #{novel.title}
+      .fa.fa-external-link
   .card-footer
     .btn.btn-outline-secondary.description.p-1
       ▽あらすじ
