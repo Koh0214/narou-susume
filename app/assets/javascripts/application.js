@@ -180,16 +180,31 @@ $(document).on('turbolinks:load',function(){
   });
 })
 
-//novels#show  novel-description
-//TODO あらすじを引っ込ませる実装もしたい。
+//novels#show  あらすじの開閉
 $(document).on('turbolinks:load',function(){
-  $(".fa-angle-down").click(function(){
-    $(this).siblings(".novel-description").animate({height: "100%"},"slow");
-    $(this).hide();
-    // $(this).removeClass("fa-angle-down").addClass("fa-angle-up");
+  $(".description-toggle").click(function(){
+    //開くとき
+    if ($(this).hasClass("fa-angle-down")) {
+      //heightをautoにする実装
+      //参考：https://stackoverflow.com/questions/5003220/animate-element-to-auto-height-with-jquery
+      var el = $(this).siblings(".novel-description"),
+      curHeight = el.height(),
+      autoHeight = el.css('height', 'auto').height();
+      el.height(curHeight).animate({height: autoHeight}, 200);
+      $(this).removeClass("fa-angle-down").addClass("fa-angle-up pushed");
+    }
+    //閉じるとき
+    else {
+      $(this).siblings(".novel-description").animate({height: "100px"}, 200);
+      $(this).removeClass("fa-angle-up").addClass("fa-angle-down");
+    }
   })
-  // $(".fa-angle-up").click(function(){
-  //   $(this).siblings(".novel-description").animate({height: "100px"}, 1);
-  //   $(this).removeClass("fa-angle-up").addClass("fa-angle-down");
-  // })
+});
+
+$(document).on('turbolinks:load',function(){
+  $(".fa-angle-up").click(function(){
+    console.log("up to down");
+    $(this).siblings(".novel-description").animate({height: "100px"}, 1);
+    $(this).removeClass("fa-angle-up").addClass("fa-angle-down");
+  })
 });
