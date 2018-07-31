@@ -14,8 +14,8 @@ class OsusumesController < ApplicationController
 
     # herokuでlikeがnilのレコードが先にきちゃうので、以下のようにして修正
     # 参考：https://stackoverflow.com/questions/5826210/rails-order-with-nulls-last
-    @novels_like_not_null = Novel.where("like is not null").order(like: :DESC)
-    @novels_like_null = Novel.where("like is null")
+    @novels_like_not_null = Novel.where.not(like: nil).order(like: :DESC)
+    @novels_like_null = Novel.where(like: nil)
     @novels = @novels_like_not_null+@novels_like_null
 
     @novel = Novel.new
