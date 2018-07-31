@@ -11,7 +11,7 @@ class OsusumesController < ApplicationController
   # GET /osusumes/1.json
   def show
     @osusume = Osusume.where(:id => params[:id]).first
-    @novels = @osusume.novels
+    @novels = @osusume.novels.order("like desc")
     @novel = Novel.new
   end
 
