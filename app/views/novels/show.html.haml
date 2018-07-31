@@ -6,7 +6,7 @@
         #{@novel.title}
         .fa.fa-external-link
   .card.text-muted.mt-1.mb-0.p-2.border-0
-    #{@novel.description}
+    = simple_format(@novel.description)
 
   %hr
 
