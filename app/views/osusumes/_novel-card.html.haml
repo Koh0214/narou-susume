@@ -3,11 +3,10 @@
     .card-title.h6.p-2.m-0
       #{novel.title}
       .fa.fa-external-link
+  .novel-description.novel-description-in-osusume.text-muted.px-3
+    = simple_format(novel.description)
+  .description-toggle.fa.fa-angle-down.mx-auto
   .card-footer
-    .btn.btn-outline-secondary.description.p-1
-      ▽あらすじ
-    -# .card
-    -#   #{novel.description}
     .fa.fa-comments-o
       %span{style: "font-size: 18px"}
         #{novel.comments.count}
