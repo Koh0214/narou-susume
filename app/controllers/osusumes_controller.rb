@@ -11,7 +11,11 @@ class OsusumesController < ApplicationController
   # GET /osusumes/1.json
   def show
     @osusume = Osusume.where(:id => params[:id]).first
-    @novels = @osusume.novels
+    if ENV["RACK_ENV"] == "production"
+      @novels = @osusume.novels.order("like COLLATE 'C' DESC")
+    else
+      @novels = @osusume.novels.order("like DESC")
+    end
     @novel = Novel.new
   end
 
