@@ -179,3 +179,17 @@ $(document).on('turbolinks:load',function(){
     });
   });
 })
+
+//novels#show  novel-description
+//TODO あらすじを引っ込ませる実装もしたい。
+$(document).on('turbolinks:load',function(){
+  $(".fa-angle-down").click(function(){
+    $(this).siblings(".novel-description").animate({height: "100%"},"slow");
+    $(this).hide();
+    // $(this).removeClass("fa-angle-down").addClass("fa-angle-up");
+  })
+  // $(".fa-angle-up").click(function(){
+  //   $(this).siblings(".novel-description").animate({height: "100px"}, 1);
+  //   $(this).removeClass("fa-angle-up").addClass("fa-angle-down");
+  // })
+});
