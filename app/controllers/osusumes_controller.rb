@@ -12,7 +12,7 @@ class OsusumesController < ApplicationController
   def show
     @osusume = Osusume.where(:id => params[:id]).first
     if ENV["RACK_ENV"] == "production"
-      @novels = @osusume.novels.order("like COLLATE 'C' DESC")
+      @novels = @osusume.novels.order('like COLLATE "C" DESC')
     else
       @novels = @osusume.novels.order("like DESC")
     end
