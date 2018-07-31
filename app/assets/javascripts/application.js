@@ -187,8 +187,8 @@ $(document).on('turbolinks:load',function(){
     if ($(this).hasClass("fa-angle-down")) {
       //heightをautoにする実装
       //参考：https://stackoverflow.com/questions/5003220/animate-element-to-auto-height-with-jquery
-      var el = $(this).siblings(".novel-description"),
-      curHeight = el.height(),
+      var el = $(this).siblings(".novel-description");
+      curHeight = el.height();
       autoHeight = el.css('height', 'auto').height();
       el.height(curHeight).animate({height: autoHeight}, 200);
       $(this).removeClass("fa-angle-down").addClass("fa-angle-up pushed");
