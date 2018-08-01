@@ -92,19 +92,19 @@ $(document).on('turbolinks:load',function(){
           $(this).parent().next().children(".comment-rating-bar-up").animate({width:up_down_rate + "%"},200);
 
           switch(true) {
-              case 90 <= up_down_rate:
+              case 75 <= up_down_rate:
                   var comment_level = "comment-level-5";
                   break;
-              case 70 <= up_down_rate && up_down_rate < 90 :
+              case 60 <= up_down_rate && up_down_rate < 75 :
                   var comment_level = "comment-level-4";
                   break;
-              case 50 <= up_down_rate && up_down_rate < 70 :
+              case 25 <= up_down_rate && up_down_rate < 60 :
                   var comment_level = "comment-level-3";
                   break;
-              case 30 <= up_down_rate && up_down_rate < 50 :
+              case 10 <= up_down_rate && up_down_rate < 25 :
                   var comment_level = "comment-level-2";
                   break;
-              case up_down_rate < 30 :
+              case up_down_rate < 10 :
                   var comment_level = "comment-level-1";
                   break;
               default:
@@ -148,19 +148,19 @@ $(document).on('turbolinks:load',function(){
           $(this).parent().prev().children(".comment-rating-bar-up").animate({width:up_down_rate + "%"},200);
 
           switch(true) {
-              case 90 <= up_down_rate:
+              case 75 <= up_down_rate:
                   var comment_level = "comment-level-5";
                   break;
-              case 70 <= up_down_rate && up_down_rate < 90 :
+              case 60 <= up_down_rate && up_down_rate < 75 :
                   var comment_level = "comment-level-4";
                   break;
-              case 50 <= up_down_rate && up_down_rate < 70 :
+              case 25 <= up_down_rate && up_down_rate < 60 :
                   var comment_level = "comment-level-3";
                   break;
-              case 30 <= up_down_rate && up_down_rate < 50 :
+              case 10 <= up_down_rate && up_down_rate < 25 :
                   var comment_level = "comment-level-2";
                   break;
-              case up_down_rate < 30 :
+              case up_down_rate < 10 :
                   var comment_level = "comment-level-1";
                   break;
               default:
