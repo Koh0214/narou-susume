@@ -2,16 +2,16 @@
   .text-muted.small.p-2
     名前: #{comment.name}
   - up_down_rate = ((comment.up.to_f) / (comment.up.to_f + comment.down.to_f)) * 100
-  - if    90 <= up_down_rate
+  - if    75 <= up_down_rate
     .p-2.comment.comment-level-5
       #{comment.comment}
-  - elsif 70 <= up_down_rate  && up_down_rate < 90
+  - elsif 60 <= up_down_rate  && up_down_rate < 75
     .p-2.comment.comment-level-4
       #{comment.comment}
-  - elsif 50 <= up_down_rate  && up_down_rate < 70
+  - elsif 25 <= up_down_rate  && up_down_rate < 60
     .p-2.comment.comment-level-3
       #{comment.comment}
-  - elsif 30 <= up_down_rate  && up_down_rate < 50
+  - elsif 10 <= up_down_rate  && up_down_rate < 25
     .p-2.comment.comment-level-2
       #{comment.comment}
   - else
