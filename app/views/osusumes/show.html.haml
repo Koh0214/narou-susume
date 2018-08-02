@@ -1,8 +1,10 @@
 .container.p-0
-  .other-osusume.card.d-flex.flex-row.flex-wrap.mt-2
+  .other-titles.card.d-flex.flex-row.flex-wrap.mt-2.p-1
+    【他カテゴリ ※リロードで変わります】
     - @osusumes.each do |osusume|
-      .short-title
-        #{osusume.short_title}
+      = link_to osusume_path(osusume), target: "_blank"  do
+        .other-title.mx-1
+          #{osusume.short_title}
   .card.my-2.border-0.sticky-top.osusume-title
     -# .card-title
     .font-weight-bold
