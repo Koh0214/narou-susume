@@ -14,6 +14,9 @@
       = fa_icon 'pencil'
       小説を追加する
     = render partial: "add-novel-modal", locals: { novel: @novel }
+  = render partial: "layouts/other-osusumes", locals: { osusumes: @osusumes }
+
+%br
 
 %p
   %b Title:
