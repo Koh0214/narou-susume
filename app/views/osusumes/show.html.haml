@@ -1,4 +1,5 @@
 .container.p-0
+  = render partial: "layouts/other-osusumes", locals: { osusumes: @osusumes }
   .card.my-2.border-0.sticky-top.osusume-title
     -# .card-title
     .font-weight-bold
@@ -13,6 +14,9 @@
       = fa_icon 'pencil'
       小説を追加する
     = render partial: "add-novel-modal", locals: { novel: @novel }
+  = render partial: "layouts/other-osusumes", locals: { osusumes: @osusumes }
+
+%br
 
 %p
   %b Title:
@@ -23,4 +27,4 @@
 
 = link_to 'Edit', edit_osusume_path(@osusume)
 \|
-= link_to 'Back', osusumes_path
+= link_to 'Back', root_path

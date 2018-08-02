@@ -10,6 +10,7 @@ class OsusumesController < ApplicationController
   # GET /osusumes/1
   # GET /osusumes/1.json
   def show
+    @osusumes = Osusume.order("RANDOM()").limit(7)
     @osusume = Osusume.where(:id => params[:id]).first
 
     # herokuでlikeがnilのレコードが先にきちゃうので、以下のようにして修正

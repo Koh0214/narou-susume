@@ -218,8 +218,8 @@ $(document).on('turbolinks:load',function(){
       headerImageBottom;
 
   _window.on('scroll',function(){
-      headerImageBottom = $('.header-image').height();
-      if(_window.scrollTop() > headerImageBottom){
+      headerBottom = $('.header-image').height() + $(".other-osusumes").height();
+      if(_window.scrollTop() > headerBottom){
           _title.addClass('sticky');
       }
       else{
