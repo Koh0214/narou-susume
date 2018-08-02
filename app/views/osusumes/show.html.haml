@@ -1,4 +1,8 @@
 .container.p-0
+  .other-osusume.card.d-flex.flex-row.flex-wrap.mt-2
+    - @osusumes.each do |osusume|
+      .short-title
+        #{osusume.short_title}
   .card.my-2.border-0.sticky-top.osusume-title
     -# .card-title
     .font-weight-bold
