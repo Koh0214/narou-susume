@@ -209,3 +209,23 @@ $(document).on('turbolinks:load',function(){
     }
   })
 });
+
+
+//osusumes#show タイトルの固定
+$(document).on('turbolinks:load',function(){
+  var _window = $(window),
+      _title = $('.osusume-title'),
+      headerImageBottom;
+
+  _window.on('scroll',function(){
+      headerImageBottom = $('.header-image').height();
+      if(_window.scrollTop() > headerImageBottom){
+          _title.addClass('sticky');
+      }
+      else{
+          _title.removeClass('sticky');
+      }
+  });
+
+  _window.trigger('scroll');
+});
