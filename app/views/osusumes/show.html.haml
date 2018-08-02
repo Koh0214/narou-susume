@@ -1,7 +1,7 @@
 .container.p-0
-  .card.my-2.border-0
+  .card.my-2.border-0.sticky-top.osusume-title
     -# .card-title
-    .h4.font-weight-bold.m-2
+    .font-weight-bold
       『#{@osusume.short_title}』のおすすめ小説
   #novel-cards
     - @novels.each do |novel|
