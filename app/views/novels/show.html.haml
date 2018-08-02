@@ -3,13 +3,16 @@
   .card.my-2.border-0
     -# .card-title
     = link_to @novel.url, target: "_blank"  do
-      .h5.font-weight-bold.m-2
+      .h5.font-weight-bold.m-2.text-info
         #{@novel.title}
-        .fa.fa-external-link
   .card.text-muted.mt-1.mb-0.px-2.pt-2.pb-0.border-0
     .novel-description
       = simple_format(@novel.description)
     .description-toggle.fa.fa-angle-down.mx-auto.my-1
+  = link_to @novel.url, target: "_blank" do
+    .btn.btn-info.mx-auto.my-2.d-block.w-50{style: "border-radius: 100px !important;"}
+      .fa.fa-book.mr-1
+      小説ページを開く
 
   %hr
 
