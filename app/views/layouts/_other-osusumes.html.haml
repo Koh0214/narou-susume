@@ -1,5 +1,7 @@
-.other-osusumes.card.d-flex.flex-row.flex-wrap.mt-2.p-1
-  【他カテゴリ ※リロードで変わります】
+.other-osusumes.card.d-flex.flex-row.flex-wrap.mt-2.px-2.py-1
+  【他カテゴリ
+  %span{class: "text-muted", style: "font-size: 80%; margin-top: 3px;"} ※リロードで変わります
+  】
   - osusumes.each do |osusume|
     = link_to osusume_path(osusume), target: "_blank"  do
       .other-osusume.mx-1
