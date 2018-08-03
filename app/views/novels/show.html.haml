@@ -9,7 +9,7 @@
     .novel-description
       = simple_format(@novel.description)
     .description-toggle.fa.fa-angle-down.mx-auto.my-1
-  = link_to @novel.url, target: "_blank" do
+  = link_to @novel.url, target: "_blank", class: "novel-page-link" do
     .btn.btn-info.mx-auto.my-2.d-block.w-50{style: "border-radius: 100px !important;"}
       .fa.fa-book.mr-1
       小説ページを開く
