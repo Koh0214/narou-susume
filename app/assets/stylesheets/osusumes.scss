@@ -13,16 +13,14 @@ body{
 
 .osusume-title h1{
   font-size: 1.25rem;
-}
-
-.osusume-title{
-  font-size: 1.25rem;
-  padding: 8px;
+  padding: 8px !important;
   transition: .2s;
 }
+.osusume-title.sticky h1{
+  font-size: 1.0rem !important;
+  padding: 4px !important;
+}
 .osusume-title.sticky{
-  font-size: 1.0rem;
-  padding: 4px;
   border-bottom: solid 1px #E9EBEE !important;
   background-color: rgba(245, 245, 245, 0.8);
 }
