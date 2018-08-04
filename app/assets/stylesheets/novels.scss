@@ -11,6 +11,16 @@
 
 .novel-title h1{
   font-size: 1.25rem;
+  padding: 8px !important;
+  transition: .2s;
+}
+.novel-title.sticky h1{
+  font-size: 1.0rem !important;
+  padding: 4px !important;
+}
+.novel-title.sticky{
+  border-bottom: solid 1px #E9EBEE !important;
+  background-color: rgba(245, 245, 245, 0.8);
 }
 
 .novel-page-link:hover{

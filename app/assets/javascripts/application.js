@@ -229,3 +229,23 @@ $(document).on('turbolinks:load',function(){
 
   _window.trigger('scroll');
 });
+
+
+//novels#show タイトルの固定
+$(document).on('turbolinks:load',function(){
+  var _window = $(window),
+      _title = $('.novel-title'),
+      headerImageBottom;
+
+  _window.on('scroll',function(){
+      headerBottom = $('.header-image').height() + $(".other-osusumes").height();
+      if(_window.scrollTop() > headerBottom){
+          _title.addClass('sticky');
+      }
+      else{
+          _title.removeClass('sticky');
+      }
+  });
+
+  _window.trigger('scroll');
+});
