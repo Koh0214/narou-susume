@@ -8,6 +8,15 @@
   height: 100px;
   overflow: hidden;
 }
+.novel-page-link-in-title{
+  opacity: 0;
+  height: 0px;
+  transition: .5s;
+}
+.novel-page-link-in-title.display{
+  opacity: 1;
+  height: 45px;
+}
 
 .novel-title h1{
   font-size: 1.25rem;
