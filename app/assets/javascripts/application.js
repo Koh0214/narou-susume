@@ -249,3 +249,24 @@ $(document).on('turbolinks:load',function(){
 
   _window.trigger('scroll');
 });
+
+//novels#show 小説ページへ飛ぶボタンの表示、非表示
+$(document).on('turbolinks:load',function(){
+  var _window = $(window),
+      _link = $('.novel-page-link-in-title'),
+      headerImageBottom;
+
+  _window.on('scroll',function(){
+      headerBottom = $('.header-image').height() + $(".other-osusumes").height();
+      novelInfo = $(".novel-title").height() + $(".novel-description").height() + $(".description-toggle").height();
+      switchHeight = headerBottom + novelInfo;
+      if(_window.scrollTop() > switchHeight){
+          _link.addClass('display');
+      }
+      else{
+          _link.removeClass('display');
+      }
+  });
+
+  _window.trigger('scroll');
+});

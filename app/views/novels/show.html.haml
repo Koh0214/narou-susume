@@ -5,6 +5,10 @@
     = link_to @novel.url, target: "_blank"  do
       %h1.font-weight-bold.text-info.mb-0
         #{@novel.title}
+    = link_to @novel.url, target: "_blank", class: "novel-page-link novel-page-link-in-title display" do
+      .btn.btn-info.mx-auto.my-1.d-block.w-50{style: "border-radius: 100px !important;"}
+        .fa.fa-book.mr-1
+        小説ページを開く →
   .card.text-muted.mt-1.mb-0.px-2.pt-2.pb-0.border-0
     .novel-description
       = simple_format(@novel.description)
@@ -12,7 +16,7 @@
   = link_to @novel.url, target: "_blank", class: "novel-page-link" do
     .btn.btn-info.mx-auto.my-2.d-block.w-50{style: "border-radius: 100px !important;"}
       .fa.fa-book.mr-1
-      小説ページを開く
+      小説ページを開く →
 
   %hr
 
