@@ -257,8 +257,10 @@ $(document).on('turbolinks:load',function(){
       headerImageBottom;
 
   _window.on('scroll',function(){
-      headerBottom = $('.header-image').height() + $(".other-osusumes").height() + $(".novel-title").height() + $(".novel-description").height() + $(".description-toggle").height();
-      if(_window.scrollTop() > headerBottom){
+      headerBottom = $('.header-image').height() + $(".other-osusumes").height();
+      novelInfo = $(".novel-title").height() + $(".novel-description").height() + $(".description-toggle").height();
+      switchHeight = headerBottom + novelInfo;
+      if(_window.scrollTop() > switchHeight){
           _link.addClass('display');
       }
       else{
