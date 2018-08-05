@@ -1,7 +1,13 @@
 .card.mt-1.mb-2.border-0
   = link_to novel_path(novel), target: "_blank"  do
     %h2.card-title.h6.p-2.m-0
-      = image_tag("/assets/images/ranking/crown-gold.png", alt: "1位", class: "crown-image")
+      - if    index == 1
+        = image_tag("/assets/images/ranking/crown-gold.png",    alt: "1位", class: "crown-image")
+      - elsif index == 2
+        = image_tag("/assets/images/ranking/crown-silver.png",  alt: "2位", class: "crown-image")
+      - elsif index == 3
+        = image_tag("/assets/images/ranking/crown-bronze.png",   alt: "3位", class: "crown-image")
+      - else
       #{novel.title}
       .fa.fa-external-link
   .novel-description.novel-description-in-osusume.text-muted.px-3
