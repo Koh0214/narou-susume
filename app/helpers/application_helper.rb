@@ -22,7 +22,7 @@ module ApplicationHelper
     {
       site: 'なろう廃人のすすめ',
       title: title,
-      reverse: true,
+      reverse: false,
       charset: 'utf-8',
       # description: description,
       description: 'みんなで作る「小説家になろう」のまとめサイト',
