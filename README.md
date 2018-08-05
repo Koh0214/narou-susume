@@ -1,6 +1,7 @@
-#URL
+# URL
 なろう廃人のすすめ
 https://narou-osusume.com/
+
 
 # README
 「小説家になろう」のジャンル別おすすめサイトです。
