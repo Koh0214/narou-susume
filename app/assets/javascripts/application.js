@@ -218,7 +218,7 @@ $(document).on('turbolinks:load',function(){
       headerImageBottom;
 
   _window.on('scroll',function(){
-      headerBottom = $('.header-image').height() + $(".other-osusumes").height();
+      headerBottom = $('.header-image').height() + $(".popular-osusumes").height();
       if(_window.scrollTop() > headerBottom){
           _title.addClass('sticky');
       }
@@ -238,7 +238,7 @@ $(document).on('turbolinks:load',function(){
       headerImageBottom;
 
   _window.on('scroll',function(){
-      headerBottom = $('.header-image').height() + $(".other-osusumes").height();
+      headerBottom = $('.header-image').height() + $(".popular-osusumes").height();
       if(_window.scrollTop() > headerBottom){
           _title.addClass('sticky');
       }
@@ -257,7 +257,7 @@ $(document).on('turbolinks:load',function(){
       headerImageBottom;
 
   _window.on('scroll',function(){
-      headerBottom = $('.header-image').height() + $(".other-osusumes").height();
+      headerBottom = $('.header-image').height() + $(".popular-osusumes").height();
       novelInfo = $(".novel-title").height() + $(".novel-description").height() + $(".description-toggle").height();
       switchHeight = headerBottom + novelInfo;
       if(_window.scrollTop() > switchHeight){
