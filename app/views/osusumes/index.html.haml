@@ -1,6 +1,7 @@
-#osusume-cards
-  - @osusumes.each do |osusume|
-    = render partial: "osusume-card", locals: { osusume: osusume }
+.container.p-0
+  #osusume-cards
+    - @osusumes.each do |osusume|
+      = render partial: "osusume-card", locals: { osusume: osusume }
 
 %br
 
