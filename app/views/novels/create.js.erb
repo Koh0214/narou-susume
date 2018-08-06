@@ -1,4 +1,4 @@
-$("<%= escape_javascript(render partial: '/osusumes/novel-card', locals: { novel: @novel }) %>").appendTo("#novel-cards");
+$("<%= escape_javascript(render partial: '/osusumes/novel-card', locals: { novel: @novel, index: "new!" }) %>").appendTo("#novel-cards");
 
 $('form').find("textarea, :text, select").val("").end().find(":checked").prop("checked", false);
 
