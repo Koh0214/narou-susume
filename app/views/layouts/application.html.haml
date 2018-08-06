@@ -11,5 +11,7 @@
     = analytics_init if Rails.env.production?
   %body
     -# ここにGIFのヘッダー入れるというアイデア面白いな。
-    = link_to image_tag("/assets/images/sma-header.png", width: '375', alt: "なろう廃人のすすめ", class: "header-image"), root_path
+    .container.p-0
+      = link_to image_tag("/assets/images/sma-header.png", width: 'auto', alt: "なろう廃人のすすめ", class: "sma-header header-image container-fluid p-0"), root_path
+      = link_to image_tag("/assets/images/pc-header2.png", width: 'auto', alt: "なろう廃人のすすめ", class: "pc-header d-block container-fluid mx-auto p-0"), root_path
     = yield
