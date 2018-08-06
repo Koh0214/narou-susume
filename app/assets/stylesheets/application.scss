@@ -20,3 +20,13 @@
  a:hover {
    background-color: white !important;
  }
+
+
+ /* パソコンで見たとき*/
+ .pc-header { display: block !important; }
+ .sma-header { display: none !important; }
+ /* スマートフォンで見たとき*/
+ @media only screen and (max-width: 750px) {
+ .pc-header { display: none !important; }
+ .sma-header { display: block !important; }
+ }
