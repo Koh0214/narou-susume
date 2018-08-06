@@ -1,5 +1,6 @@
 .container.p-0
-  = render partial: "layouts/other-osusumes", locals: { osusumes: @osusumes }
+  -# = render partial: "layouts/other-osusumes", locals: { osusumes: @osusumes }
+  = render partial: "layouts/popular-osusumes", locals: { osusumes: @osusumes }
   .card.my-2.border-0.sticky-top.osusume-title
     -# .card-title
     %h1.m-0.font-weight-bold
@@ -14,7 +15,8 @@
       = fa_icon 'pencil'
       小説を追加する
     = render partial: "add-novel-modal", locals: { novel: @novel }
-  = render partial: "layouts/other-osusumes", locals: { osusumes: @osusumes }
+  -# = render partial: "layouts/popular-osusumes", locals: { osusumes: @osusumes }
+  = render partial: "layouts/popular-osusumes", locals: { osusumes: @osusumes }
 
 %br
 

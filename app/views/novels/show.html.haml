@@ -1,5 +1,6 @@
 .container.p-0
-  = render partial: "layouts/other-osusumes", locals: { osusumes: @osusumes }
+  -# = render partial: "layouts/other-osusumes", locals: { osusumes: @osusumes }
+  = render partial: "layouts/popular-osusumes", locals: { osusumes: @osusumes }
   .novel-title.card.my-2.border-0.sticky-top
     -# .card-title
     = link_to @novel.url, target: "_blank"  do
@@ -27,7 +28,8 @@
 
   = render partial: "comment-form", locals: { comment: @comment}
 
-  = render partial: "layouts/other-osusumes", locals: { osusumes: @osusumes }
+  -# = render partial: "layouts/other-osusumes", locals: { osusumes: @osusumes }
+  = render partial: "layouts/popular-osusumes", locals: { osusumes: @osusumes }
 
 -# TODO modalをつけるかどうかを判断
   -# .row.m-3
