@@ -10,7 +10,7 @@ class NovelsController < ApplicationController
   # GET /novels/1
   # GET /novels/1.json
   def show
-    @osusumes = Osusume.order("RANDOM()").limit(7)
+    @osusumes = Osusume.order("RANDOM()").limit(3)
     @novel = Novel.where(:id => params[:id]).first
     @comment = Comment.new
     @comments = @novel.comments.order(:id)
