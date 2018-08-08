@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 5.2.0.rc1'
 # # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 # Use Puma as the app server
@@ -45,6 +45,9 @@ gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'meta-tags'
 gem 'google-analytics-rails'
+
+gem 'summernote-rails', '~> 0.8.10.0'
+gem 'simple_form', '~> 3.5.1'
 
 gem 'meta_request', group: :development
 
