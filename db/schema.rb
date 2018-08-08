@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_19_032113) do
+ActiveRecord::Schema.define(version: 2018_08_08_083306) do
 
   create_table "comments", force: :cascade do |t|
     t.string "name"
@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(version: 2018_07_19_032113) do
   create_table "osusumes", force: :cascade do |t|
     t.string "title"
     t.string "short_title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "name"
+    t.text "text"
+    t.integer "like"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
