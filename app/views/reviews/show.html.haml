@@ -1,15 +1,10 @@
-%p#notice= notice
-
-%p
-  %b Name:
-  = @review.name
-%p
-  %b Text:
-  = @review.text
-%p
-  %b Like:
-  = @review.like
-
-= link_to 'Edit', edit_review_path(@review)
-\|
-= link_to 'Back', reviews_path
+.container.m-0.p-0
+  %p#notice= notice
+  .content{style: "border: solid 2px gray; padding: 10px; margin: 10px;"}
+    .review-name.text-muted.small.mb-2
+      名前:
+      = @review.name
+    = @review.text.html_safe
+  = link_to 'Edit', edit_review_path(@review)
+  |
+  = link_to 'Back', reviews_path
