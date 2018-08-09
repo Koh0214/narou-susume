@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_08_083306) do
+ActiveRecord::Schema.define(version: 2018_08_09_093513) do
 
   create_table "comments", force: :cascade do |t|
     t.string "name"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 2018_08_08_083306) do
     t.integer "like"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "novel_id"
+    t.index ["novel_id"], name: "index_reviews_on_novel_id"
   end
 
 end
