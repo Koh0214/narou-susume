@@ -1,0 +1,7 @@
+.review-card.my-1.p-2
+  -# - binding.pry
+  - if review.name.present?
+    .review-name.text-muted.small.mb-3
+      [#{review.name}さんのレビュー]
+  .review-text
+    = review.text.html_safe
