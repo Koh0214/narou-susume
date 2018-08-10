@@ -18,6 +18,14 @@
     .m-1
       - random_review = novel.reviews.shuffle.first
       = render partial: "layouts/review-card", locals: { review: random_review }
+  = link_to novel.url, target: "_blank", class: "novel-page-link" do
+    .btn.btn-primary.mx-auto.mb-2.w-75.d-block{style: "border-radius: 100px !important; width: 45%;"}
+      .fa.fa-book.mr-1
+      公式ページ →
+  = link_to novel_path(novel), target: "_blank", class: "novel-page-link" do
+    .jump-to-novel-show-btn.btn.mx-auto.mb-3.w-75.d-block{style: "border-radius: 100px !important; width: 45%;"}
+      .fa.fa-comment-o.mr-1
+      他のレビュー・コメント →
   .card-footer
     .fa.fa-comments-o
       %span{style: "font-size: 18px"}
