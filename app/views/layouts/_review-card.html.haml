@@ -3,5 +3,8 @@
   - if review.name.present?
     .review-name.text-muted.small.mb-3
       [#{review.name}さんのレビュー]
+  - else
+    .review-name.text-muted.small.mb-3
+      [レビュー]
   .review-text
     = review.text.html_safe
