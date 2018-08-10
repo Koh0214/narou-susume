@@ -8,6 +8,9 @@
   #novel-cards
     - @novels.each.with_index(1) do |novel, index|
       = render partial: "novel-card", locals: { novel: novel, index: index }
+      -# シャッフルして１つ表示
+      - if novel.reviews.present?
+        = novel.reviews.shuffle.first.text.html_safe
 
   .row.m-3
     / 切り替えボタンの設定
