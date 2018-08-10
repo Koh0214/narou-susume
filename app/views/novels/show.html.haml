@@ -23,6 +23,10 @@
       .btn.btn-primary.mx-auto.my-2.w-100{style: "border-radius: 100px !important; width: 45%;"}
         .fa.fa-pencil.mr-1
         レビューする →
+  %hr
+  【レビュー】
+  - @novel.reviews.each do |review|
+    = render partial: "layouts/review-card", locals: { review: review}
 
   %hr
 
