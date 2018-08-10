@@ -13,6 +13,11 @@
   .novel-description.novel-description-in-osusume.text-muted.px-3
     = simple_format(novel.description)
   .description-toggle.fa.fa-angle-down.mx-auto
+  -# レビューをシャッフルして１つ表示
+  - if novel.reviews.present?
+    .m-1
+      - random_review = novel.reviews.shuffle.first
+      = render partial: "layouts/review-card", locals: { review: random_review }
   .card-footer
     .fa.fa-comments-o
       %span{style: "font-size: 18px"}
@@ -23,5 +28,6 @@
           #{novel.like}
         - else
           0
+      好き！
     .novel-id{style: "display:none"}
       #{novel.id}

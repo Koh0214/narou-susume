@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   get "osusumes/like"
   get "novels/comment_count_up"
   get "novels/comment_count_down"
+
   resources :comments
-  resources :novels
+  resources :novels do
+    resources :reviews
+  end
   resources :osusumes
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "osusumes#index"

@@ -1,0 +1,17 @@
+.container
+  - if @review.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@review.errors.count, "error")} prohibited this review from being saved:"
+      %ul
+        - @review.errors.full_messages.each do |message|
+          %li= message
+
+  = form_for ([@novel, @review]) do |form|
+    .field.m-3
+      = form.label "名前"
+      = form.text_field :name
+      = form.text_area :text, 'data-provider': :summernote
+      = form.number_field :like
+      = form.hidden_field :novel_id, :value => @novel.id
+      .actions
+        = form.submit "レビューを保存する", class: "btn btn-primary"

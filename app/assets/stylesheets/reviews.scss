@@ -1,0 +1,32 @@
+// Place all the styles related to the Reviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//summernoteの上書き（スマホ対応）
+.dropdown-item{
+  white-space: normal !important;
+  padding: 0px !important;
+}
+
+
+
+.review-card{
+  background-color: white;
+  border: solid 1px rgb(196, 255, 214);
+}
+
+
+//novel show view
+
+.new-review-link-btn{
+  position: fixed;
+  bottom: 30px;
+  right:  15%;
+  z-index: 999;
+  width: 270px;
+  border-radius: 100px !important;
+  color: white !important;
+  &:hover{
+    background-color: blue !important;
+  }
+}

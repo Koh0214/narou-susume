@@ -1,0 +1,10 @@
+.review-card.my-2.p-2
+  .review-content
+    - if review.name.present?
+      .review-name.text-muted.small.mb-3
+        【#{review.name}さんのレビュー】
+    - else
+      .review-name.text-muted.small.mb-3
+        【なろう廃人さんのレビュー】
+    .review-text
+      = review.text.html_safe
