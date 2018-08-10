@@ -14,10 +14,15 @@
     .novel-description
       = simple_format(@novel.description)
     .description-toggle.fa.fa-angle-down.mx-auto.my-1
-  = link_to @novel.url, target: "_blank", class: "novel-page-link" do
-    .btn.btn-info.mx-auto.my-2.d-block.w-50{style: "border-radius: 100px !important;"}
-      .fa.fa-book.mr-1
-      小説ページを開く →
+  .d-flex.justify-content-between.p-2
+    = link_to @novel.url, target: "_blank", class: "novel-page-link" do
+      .btn.btn-info.mx-auto.my-2.w-100{style: "border-radius: 100px !important; width: 45%;"}
+        .fa.fa-book.mr-1
+        小説ページを開く →
+    = link_to new_novel_review_path(@novel), target: "_blank", class: "novel-page-link" do
+      .btn.btn-primary.mx-auto.my-2.w-100{style: "border-radius: 100px !important; width: 45%;"}
+        .fa.fa-pencil.mr-1
+        レビューする →
 
   %hr
 
@@ -25,6 +30,11 @@
   #comment-cards
     - @comments.each do |comment|
       = render partial: "comment-card", locals: { comment: comment}
+
+  -# = link_to new_review_path, target: "_blank", class: "new-review-link-btn btn btn-primary" do
+  -#   -# .btn.btn-primary.mx-auto.my-2.d-block.w-50{style: "border-radius: 100px !important;"}
+  -#   .fa.fa-pencil.mr-1
+  -#   レビューする →
 
   = render partial: "comment-form", locals: { comment: @comment}
 
