@@ -9,18 +9,18 @@
     = link_to @novel.url, target: "_blank", class: "novel-page-link novel-page-link-in-title display" do
       .btn.btn-info.mx-auto.my-1.d-block.w-50{style: "border-radius: 100px !important;"}
         .fa.fa-book.mr-1
-        小説ページを開く →
+        公式ページ →
   .card.text-muted.mt-1.mb-0.px-2.pt-2.pb-0.border-0
     .novel-description
       = simple_format(@novel.description)
     .description-toggle.fa.fa-angle-down.mx-auto.my-1
   .d-flex.justify-content-between.p-2
     = link_to @novel.url, target: "_blank", class: "novel-page-link" do
-      .btn.btn-info.mx-auto.my-2.w-100{style: "border-radius: 100px !important; width: 45%;"}
-        .fa.fa-book.mr-1
-        小説ページを開く →
-    = link_to new_novel_review_path(@novel), target: "_blank", class: "novel-page-link" do
       .btn.btn-primary.mx-auto.my-2.w-100{style: "border-radius: 100px !important; width: 45%;"}
+        .fa.fa-book.mr-1
+        公式ページ →
+    = link_to new_novel_review_path(@novel), target: "_blank", class: "novel-page-link" do
+      .btn.btn-info.mx-auto.my-2.w-100{style: "border-radius: 100px !important; width: 45%;"}
         .fa.fa-pencil.mr-1
         レビューする →
   %hr
