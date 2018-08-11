@@ -5,9 +5,9 @@
     -# .card-title
     %h1.m-0.font-weight-bold
       - if @osusume.novels.count != 0
-        = "『#{@osusume.short_title}』のおすすめ小説#{@osusume.novels.count}選！！！"
+        = "【#{@osusume.short_title}】のおすすめ小説#{@osusume.novels.count}個紹介！"
       - else
-        = "『#{@osusume.short_title}』のおすすめ小説！！！"
+        = "【#{@osusume.short_title}】のおすすめ小説を紹介します！！！"
   #novel-cards
     - @novels.each.with_index(1) do |novel, index|
       = render partial: "novel-card", locals: { novel: novel, index: index }
