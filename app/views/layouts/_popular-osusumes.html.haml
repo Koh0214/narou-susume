@@ -5,6 +5,9 @@
     .w-100
       = link_to osusume_path(osusume), target: "_blank"  do
         .other-osusume.mx-1
-          ・【#{osusume.short_title}】のおすすめ
+          - if osusume.novels.count != 0
+            = "・【#{osusume.short_title}】のおすすめ小説 #{osusume.novels.count}個 紹介！"
+          - else
+            = "・【#{osusume.short_title}】のおすすめ小説を紹介します！"
           .fa.fa-external-link.small
 %hr.my-2
