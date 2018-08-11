@@ -3,9 +3,9 @@ module ApplicationHelper
   def title
     if @osusume
       if @osusume.novels.count != 0
-        title = "『#{@osusume.short_title}』のおすすめ小説#{@osusume.novels.count}選！！！"
+        title = "【#{@osusume.short_title}】のおすすめ小説#{@osusume.novels.count}個紹介！"
       else
-        title = "『#{@osusume.short_title}』のおすすめ小説！！！"
+        title = "【#{@osusume.short_title}】のおすすめ小説を紹介します！！！"
       end
     end
   end
