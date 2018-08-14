@@ -3,19 +3,19 @@
     名前: #{comment.name}
   - up_down_rate = ((comment.up.to_f) / (comment.up.to_f + comment.down.to_f)) * 100
   - if    75 <= up_down_rate
-    .p-2.comment.comment-level-5
+    .px-2.pt-2.pb-0.comment.comment-level-5
       #{comment.comment}
   - elsif 60 <= up_down_rate  && up_down_rate < 75
-    .p-2.comment.comment-level-4
+    .px-2.pt-2.pb-0.comment.comment-level-4
       #{comment.comment}
   - elsif 25 <= up_down_rate  && up_down_rate < 60
-    .p-2.comment.comment-level-3
+    .px-2.pt-2.pb-0.comment.comment-level-3
       #{comment.comment}
   - elsif 10 <= up_down_rate  && up_down_rate < 25
-    .p-2.comment.comment-level-2
+    .px-2.pt-2.pb-0.comment.comment-level-2
       #{comment.comment}
   - else
-    .p-2.comment.comment-level-1
+    .px-2.pt-2.pb-0.comment.comment-level-1
       #{comment.comment}
   .container.mb-0.mt-3.pr-1
     .row.mx-auto.d-flex.justify-content-end.comment-bottom-content
