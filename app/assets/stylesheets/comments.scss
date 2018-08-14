@@ -34,7 +34,6 @@
 }
 
 #comment-cards .comment-card{
-  height: 100%;
   border-radius: 17px !important;
 }
 
@@ -43,11 +42,11 @@
 // comment
 .comment-rating-button {
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 15px;
-  font-size: 25px;
-  padding-top: 5px;
+  font-size: 17px;
+  padding-top: 0.7px;
   margin-bottom: 1px;
   // ユーザーがボタンのテキストをハイライトできないようにする
   -webkit-user-select:none;
@@ -96,19 +95,19 @@
 .comment-rating-bar{
   border-radius: 20px;
   background-color: #DFDFD0;
-  height: 15px;
-  width: 150px;
+  height: 10px;
+  width: 120px;
   .comment-rating-bar-up{
     border-radius: 20px;
     background-color: #73DCFF;
-    height: 15px;
-    width: 100px;
+    height: 10px;
+    width: 80px;
   }
 }
 
 .comment-count{
   font-size: 12px;
-  margin-left: 8px;
+  margin-left: 6px;
 }
 .comment-count-up{
   color: #5DB2CD !important;
