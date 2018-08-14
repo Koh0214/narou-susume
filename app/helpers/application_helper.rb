@@ -31,7 +31,7 @@ module ApplicationHelper
       reverse: false,
       charset: 'utf-8',
       # description: description,
-      description: 'みんなで作る「小説家になろう」のまとめサイト',
+      description: title.to_s + 'みんなで作る「小説家になろう」のまとめサイト',
       keywords: keywords,
       canonical: request.original_url,
       separator: ':',
