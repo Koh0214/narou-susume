@@ -2,30 +2,116 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+//comment-level
 // up_down_rate = 90%~
 .comment-level-5{
-  font-size: 150%;
+  font-size: 110%;
   font-weight: bold;
   color: red;
 }
 // up_down_rate = 70~90%
 .comment-level-4{
-  font-size: 130%;
+  font-size: 90%;
   font-weight: bold;
 }
 // up_down_rate = 50~70%
 .comment-level-3{
+  font-size: 70%;
   font-weight: bold;
 }
 // up_down_rate = 30=50%
 .comment-level-2{
+  font-size: 50%;
 }
 // up_down_rate = ~ 30%
 .comment-level-1{
+  font-size: 50%;
   color: #777;
+}
+
+.comment-name {
+  font-size: 60%;
 }
 
 #comment-cards .comment-card{
   border-radius: 17px !important;
+}
+
+
+// comment btn, bar
+// comment
+.comment-rating-button {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  font-size: 17px;
+  padding-top: 0.7px;
+  margin-bottom: 1px;
+  // ユーザーがボタンのテキストをハイライトできないようにする
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+.comment-rating-button-up{
+  background: #73DCFF;
+  box-shadow: 0 2px 0 #2a82a3;
+  color: white !important;
+  &:hover{
+    background-color: #2a82a3 !important;
+  }
+}
+.comment-rating-button-up-pushed{
+  background-color: #2a82a3 !important;
+  box-shadow: 0 2px 0 #2a82a3;
+  color: white !important;
+  pointer-events: none;
+  &:hover{
+    background-color: #2a82a3 !important;
+  }
+}
+
+
+
+.comment-rating-button-down{
+  background: #BDBDAE;
+  box-shadow: 0 3px 0 #79796A;
+  color: white !important;
+  &:hover{
+    background-color: #79796A !important;
+  }
+}
+.comment-rating-button-down-pushed{
+  background-color: #79796A !important;
+  box-shadow: 0 3px 0 #79796A;
+  color: white !important;
+  pointer-events: none;
+  &:hover{
+    background-color: #79796A !important;
+  }
+}
+
+.comment-rating-bar{
+  border-radius: 20px;
+  background-color: #DFDFD0;
+  height: 10px;
+  width: 120px;
+  .comment-rating-bar-up{
+    border-radius: 20px;
+    background-color: #73DCFF;
+    height: 10px;
+    width: 80px;
+  }
+}
+
+.comment-count{
+  font-size: 12px;
+  margin-left: 6px;
+}
+.comment-count-up{
+  color: #5DB2CD !important;
+}
+.comment-count-down{
+  color: #99998C !important;
 }
