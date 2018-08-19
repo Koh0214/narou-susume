@@ -28,7 +28,7 @@ module ApplicationHelper
     {
       site: 'なろう廃人のすすめ',
       title: title,
-      reverse: false,
+      reverse: true,
       charset: 'utf-8',
       # description: description,
       description: title.to_s + 'みんなで作る「小説家になろう」のまとめサイト',
