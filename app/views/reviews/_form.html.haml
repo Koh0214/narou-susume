@@ -5,13 +5,14 @@
       %ul
         - @review.errors.full_messages.each do |message|
           %li= message
+  .novel-title.card.my-2.border-0.sticky-top
+    %h1.font-weight-bold.text-info.mb-0
+      【#{@novel.title}】のレビューを書く
 
   = form_for ([@novel, @review]) do |form|
     .field.m-3
-      = form.label "名前"
-      = form.text_field :name
+      = form.text_field :name, placeholder: "名前", class: "mb-2 text-muted"
       = form.text_area :text, 'data-provider': :summernote
-      = form.number_field :like
       = form.hidden_field :novel_id, :value => @novel.id
-      .actions
+      .actions.mt-3
         = form.submit "レビューを保存する", class: "btn btn-primary"
