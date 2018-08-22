@@ -21,15 +21,6 @@
   -# = render partial: "layouts/popular-osusumes", locals: { osusumes: @osusumes }
   = render partial: "layouts/popular-osusumes", locals: { osusumes: @osusumes }
 
-%br
+  %br
 
-%p
-  %b Title:
-  = @osusume.title
-%p
-  %b short_title:
-  = @osusume.short_title
-
-= link_to 'Edit', edit_osusume_path(@osusume)
-\|
-= link_to 'Back', root_path
+  = link_to '< Home', root_path, class: "btn btn-primary text-white"
