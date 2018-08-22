@@ -3,9 +3,8 @@
   = render partial: "layouts/popular-osusumes", locals: { osusumes: @osusumes }
   .novel-title.card.my-2.border-0.sticky-top
     -# .card-title
-    = link_to @novel.url, target: "_blank"  do
-      %h1.font-weight-bold.text-info.mb-0
-        #{@novel.title}
+    %h1.font-weight-bold.text-info.mb-0
+      #{@novel.title}
     = link_to @novel.url, target: "_blank", class: "novel-page-link novel-page-link-in-title display" do
       .btn.btn-primary.mx-auto.my-1.d-block.w-50{style: "border-radius: 100px !important;"}
         .fa.fa-book.mr-1
