@@ -1,13 +1,12 @@
 .popular-osusumes.card.d-flex.flex-row.flex-wrap.mt-2.px-2.py-1
   .w-100
-    &=" - 人気記事 - "
+    &="- いま、他の人が読んでいます -"
   - osusumes.each do |osusume|
     .w-100
       = link_to osusume_path(osusume), target: "_blank"  do
         .other-osusume.mx-1
           - if osusume.novels.count != 0
-            = "・【#{osusume.short_title}】のおすすめ小説 #{osusume.novels.count}個 紹介！"
+            = "【#{osusume.short_title}】のおすすめ小説 #{osusume.novels.count}個 紹介！"
           - else
-            = "・【#{osusume.short_title}】のおすすめ小説を紹介します！"
-          .fa.fa-external-link.small
+            = "【#{osusume.short_title}】のおすすめ小説を紹介します！"
 %hr.my-2
