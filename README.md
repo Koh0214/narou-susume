@@ -28,16 +28,16 @@ https://narou-osusume.com/
 （facebook）, twitterのいいね機能は実は”既読を相手に示すもの”として使われているので、その方向かなと考えております）
 
 
-#twitter
+# twitter
 ##意見、ご要望、おすすめ小説、ジャンル追加希望 などございましたらtwitterへ連絡ください
 https://twitter.com/ko_chan214
 
-#Qiita
+# Qiita
 開発中の技術メモは全てqiitaに上げてあります。
 https://qiita.com/Kohei_Kishimoto0214
 
 
-#使用技術
+# 使用技術
 Ruby on Rails5（DHHの少人数チームで開発しようぜという思想が好き）
 Heroku
 postgreSQL
