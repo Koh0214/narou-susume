@@ -273,3 +273,17 @@ $(document).on('turbolinks:load',function(){
 
   _window.trigger('scroll');
 });
+
+//recommend-barの表示、非表示
+$(document).on('turbolinks:load',function(){
+  // https://mae.chab.in/archives/2699#post2699-3
+  // scrollイベントを取得した際の処理を定義
+  $(window).on("scroll", function () {
+    if ($(this).scrollTop() > 500) {
+      $(".recommend-bar").slideDown();
+    } else {
+      $(".recommend-bar").slideUp();
+    }
+  });
+
+});
