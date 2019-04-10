@@ -13,7 +13,7 @@
       = render partial: "novel-card", locals: { novel: novel, index: index }
   .recommend-bar
     こちらもいかかですか？
-    = link_to osusume_path(@osusumes.first), target: "_blank"  do
+    = link_to osusume_path(@osusumes.first), target: "_blank", class: "recommend-bar__link"  do
       = " 【 #{@osusumes.first.short_title} 】 "
     -# TODO close buttonを導入する
   .row.m-3
