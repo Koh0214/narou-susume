@@ -11,8 +11,11 @@
   #novel-cards
     - @novels.each.with_index(1) do |novel, index|
       = render partial: "novel-card", locals: { novel: novel, index: index }
-  .recommend-bar recommend
-  .recommend-bar-close-button ×
+  .recommend-bar
+    こちらもいかかですか？
+    = link_to osusume_path(@osusumes.first), target: "_blank"  do
+      = " 【 #{@osusumes.first.short_title} 】 "
+    -# TODO close buttonを導入する
   .row.m-3
     / 切り替えボタンの設定
     %button.btn.btn-primary.btn-add-novel{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button"}
