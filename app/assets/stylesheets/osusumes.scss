@@ -87,3 +87,25 @@ body{
   background-color: #55c6d9;
   color: white !important;
 }
+
+.recommend-bar {
+  background-color: #00B900;
+  line-height: 50px;
+  text-align: center;
+  width: 100%;
+  color: #fff !important;
+
+  border-radius: 20px;
+  margin-bottom: 15px;
+
+  position: fixed;
+  bottom: 0;
+  display: none;
+}
+
+.recommend-bar__link{
+  color: white !important;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 18px;
+}
