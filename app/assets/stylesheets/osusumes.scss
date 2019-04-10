@@ -89,14 +89,16 @@ body{
 }
 
 .recommend-bar {
-  background-color: #58D3F7;
-  line-height: 80px;
+  background-color: #00B900;
+  line-height: 50px;
   text-align: center;
   width: 100%;
-  color: #fff;
+  color: #fff !important;
 
-  position: fixed; /* ヘッダーバーを固定 */
-  bottom: 0; /* 上から0の位置に固定 */
-  left: 0; /* 左から0の位置に固定 */
-  display: none; /* ヘッダーバーを非表示 */
+  border-radius: 20px;
+  margin-bottom: 15px;
+
+  position: fixed;
+  bottom: 0;
+  display: none;
 }
