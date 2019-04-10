@@ -13,8 +13,13 @@
       = render partial: "novel-card", locals: { novel: novel, index: index }
   .recommend-bar
     こちらもいかかですか？
-    = link_to osusume_path(@osusumes.first), target: "_blank", class: "recommend-bar__link"  do
-      = " 【 #{@osusumes.first.short_title} 】 "
+    -# 今見ているおすすめと同じのを、表示しないように制御
+    - if @osusume.short_title != @osusumes.first.short_title
+      = link_to osusume_path(@osusumes.first), target: "_blank", class: "recommend-bar__link"  do
+        = " 【 #{@osusumes.first.short_title} 】 "
+    - else
+      = link_to osusume_path(@osusumes.second), target: "_blank", class: "recommend-bar__link"  do
+        = " 【 #{@osusumes.second.short_title} 】 "
     -# TODO close buttonを導入する
   .row.m-3
     / 切り替えボタンの設定
