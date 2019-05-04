@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_03_225926) do
+ActiveRecord::Schema.define(version: 2019_05_03_233330) do
 
   create_table "comments", force: :cascade do |t|
     t.string "name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_05_03_225926) do
     t.datetime "updated_at", null: false
     t.string "amazon_image_link"
     t.string "amazon_link"
+    t.string "amazon_kindle_link"
     t.index ["osusume_id"], name: "index_novels_on_osusume_id"
   end
 
