@@ -37,3 +37,34 @@
 .novel-page-link:hover{
   text-decoration: none;
 }
+
+.novel-box-title{
+  font-weight: bolder;
+}
+
+.amazon-image{
+  width: 100px;
+  height: 150px;
+}
+
+.amazon-image-percentage{
+  width: 30%;
+}
+
+.flex{
+  display: flex;
+}
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+}
+
+.flex-space-around{
+  display: flex;
+  justify-content: space-around;
+}
+
+.white{
+  color: white;
+}
