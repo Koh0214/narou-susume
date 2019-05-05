@@ -10,7 +10,7 @@
       -if amazon_image_link.present?
         = image_tag(amazon_image_link, class: "amazon-image p-1")
     .novel-box.p-1
-      = link_to novel_link, target: "_blank", class: "novel-box-title"  do
+      = link_to novel_link, target: "_blank", class: "novel-box-title ml-2 mt-2"  do
         - if    index == 1
           = image_tag("/assets/images/ranking/crown-gold.png",    alt: "1位", class: "crown-image")
         - elsif index == 2
@@ -20,7 +20,7 @@
         - else
         #{novel.title}
         .fa.fa-external-link
-      .novel-description.novel-description-in-osusume.text-muted.px-2.mt-2
+      .novel-description.novel-description-in-osusume.text-muted.px-3.mt-2
         = simple_format(novel.description)
       .flex-center
         .description-toggle.fa.fa-angle-down
@@ -40,7 +40,6 @@
         %span.font-weight-bold
           小説を読む
   .flex-space-around
-    -# TODO ボタンの色をamazonっぽくする
     - if amazon_link.present?
       = link_to amazon_link, target: "_blank", class: "novel-page-link mt-2" do
         .btn.jump-to-novel-show-btn.w-100{style: "border-radius: 100px !important;"}
