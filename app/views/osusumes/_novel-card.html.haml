@@ -21,12 +21,8 @@
         .description-box
           .novel-description.novel-description-in-osusume.text-muted.px-3.mt-2
             = simple_format(novel.description)
-          .flex-center
-            .description-toggle.fa.fa-angle-down.mb-1
-          = link_to novel_link, target: "_blank", class: "novel-page-link mt-2 mb-2" do
-            .btn.btn-primary.mx-auto.w-75.d-block{style: "border-radius: 100px !important;"}
-              %span.font-weight-bold
-                小説を読む
+          .flex-center.mt-1
+            .description-toggle.fa.fa-angle-down
         = link_to amazon_link, target: "_blank"  do
           -if amazon_image_link.present?
             = image_tag(amazon_image_link, class: "amazon-image mr-3 mt-2")
@@ -34,15 +30,19 @@
     .m-0
       - random_comment = novel.comments.shuffle.first
       = render partial: "layouts/comment-card", locals: { comment: random_comment }
+  = link_to novel_link, target: "_blank", class: "novel-page-link mt-2 mb-2" do
+    .btn.btn-primary.mx-auto.w-75.d-block{style: "border-radius: 100px !important;"}
+      %span.font-weight-bold
+        小説を読む
   .flex-center
     - if amazon_link.present?
-      = link_to amazon_link, target: "_blank", class: "novel-page-link mt-2 mb-1 mr-2" do
+      = link_to amazon_link, target: "_blank", class: "novel-page-link mb-1 mr-2" do
         .btn.jump-to-novel-show-btn.w-100{style: "border-radius: 100px !important;"}
           .fa.fa-amazon.mr-1
           %span.font-weight-bold.pr-1
             amazon
     - if kindle_link.present?
-      = link_to kindle_link, target: "_blank", class: "novel-page-link mt-2 mb-1" do
+      = link_to kindle_link, target: "_blank", class: "novel-page-link mb-1" do
         .btn.jump-to-novel-show-btn.w-100{style: "border-radius: 100px !important;"}
           .fa.fa-book.mr-1
           %span.font-weight-bold.pr-1
