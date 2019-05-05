@@ -1,10 +1,9 @@
 .card.mt-1.mb-2.border-0
   .novel-card__up.flex
-    = link_to novel.url, target: "_blank"  do
+    -# TODO kindleリンクがあればkindle, amazonリンクがあればamazonへ飛ばす
+    = link_to novel.amazon_link, target: "_blank"  do
       -if novel.amazon_image_link.present?
         = image_tag(novel.amazon_image_link, class: "amazon-image p-1")
-      -else
-        -# = image_tag("/assets/images/oresibo.jpg", class: "amazon-image p-1")
     .novel-box.p-1
       = link_to novel.url, target: "_blank", class: "novel-box-title"  do
         - if    index == 1
@@ -24,22 +23,30 @@
     .m-0
       - random_comment = novel.comments.shuffle.first
       = render partial: "layouts/comment-card", locals: { comment: random_comment }
-  = link_to novel.url, target: "_blank", class: "novel-page-link mt-2" do
-    .btn.btn-primary.mx-auto.w-75.d-block{style: "border-radius: 100px !important;"}
-      %span.font-weight-bold
-        小説を読む →
+  - if novel.amazon_link.nil? && novel.amazon_kindle_link.nil?
+    = link_to novel.url, target: "_blank", class: "novel-page-link mt-2 mb-2" do
+      .btn.btn-primary.mx-auto.w-75.d-block{style: "border-radius: 100px !important;"}
+        %span.font-weight-bold
+          小説を読む
+  - else
+    = link_to novel.url, target: "_blank", class: "novel-page-link mt-2" do
+      .btn.btn-primary.mx-auto.w-75.d-block{style: "border-radius: 100px !important;"}
+        %span.font-weight-bold
+          小説を読む
   .flex-space-around
     -# TODO ボタンの色をamazonっぽくする
-    = link_to novel.url, target: "_blank", class: "novel-page-link mt-2" do
-      .btn.jump-to-novel-show-btn.w-100{style: "border-radius: 100px !important;"}
-        .fa.fa-amazon.mr-1
-        %span.font-weight-bold
-          amazon →
-    = link_to novel.url, target: "_blank", class: "novel-page-link mt-2" do
-      .btn.jump-to-novel-show-btn.w-100{style: "border-radius: 100px !important;"}
-        .fa.fa-book.mr-1
-        %span.font-weight-bold
-          kindle →
+    - if novel.amazon_link.present?
+      = link_to novel.amazon_link, target: "_blank", class: "novel-page-link mt-2" do
+        .btn.jump-to-novel-show-btn.w-100{style: "border-radius: 100px !important;"}
+          .fa.fa-amazon.mr-1
+          %span.font-weight-bold
+            amazon →
+    - if novel.amazon_kindle_link.present?
+      = link_to novel.amazon_kindle_link, target: "_blank", class: "novel-page-link mt-2" do
+        .btn.jump-to-novel-show-btn.w-100{style: "border-radius: 100px !important;"}
+          .fa.fa-book.mr-1
+          %span.font-weight-bold
+            kindle →
   .card-footer.mt-1
     .white
       #{novel.id}
