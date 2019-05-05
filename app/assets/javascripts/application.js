@@ -184,17 +184,19 @@ $(document).on('turbolinks:load',function(){
 })
 
 //あらすじの開閉 osusumes#show, _novel-card
+// TODO 矢印をクリックした時もあらすじ開閉するようにする
 $(document).on('turbolinks:load',function(){
   $(".novel-description").click(function(){
-    //あらすじを一覧では50pxの高さ、小説個別画面では100pxの高さにした方が見やすいので以下のように実装
     // osusumes#show
     if ($(this).hasClass("novel-description-in-osusume")) {
-      var description_height = "107";
+      var description_height = "144";
     }
     // novel#show
     else {
       var description_height = "100";
     }
+
+    console.log($(this));
 
     //開く
     if ($(this).height() == description_height) {
