@@ -55,7 +55,7 @@
   .card-footer.mt-1
     .white
       #{novel.id}
-    = link_to novel_path, target: "_blank"  do
+    = link_to novel_path(novel.id), target: "_blank"  do
       .fa.fa-comments-o
         %span{style: "font-size: 18px"}
           #{novel.comments.count}
