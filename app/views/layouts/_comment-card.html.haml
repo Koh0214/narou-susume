@@ -1,0 +1,11 @@
+-# TODO review~~という名前になっているので、CSSから修正する
+.review-card.mt-2.mx-3.mb-0.p-2
+  .review-content
+    - if current_page?(controller: 'osusumes', action: 'show')
+      .review-name.text-muted.small.mb-3
+        みんなのコメント
+    - else
+    .review-text
+      = comment.comment
+      -# = link_to novel_path, target: "_blank"  do
+      -#   他のコメント

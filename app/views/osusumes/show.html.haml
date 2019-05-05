@@ -14,19 +14,21 @@
   -# 今見ているおすすめと同じのを、表示しないように制御
   - if @osusume.short_title != @osusumes.first.short_title
     = link_to osusume_path(@osusumes.first), target: "_blank" do
-      .recommend-bar
-        こちらもいかかですか？
-        %span.recommend-bar__link
-          = " 【 #{@osusumes.first.short_title} 】 "
+      .flex-center
+        .recommend-bar
+          これも好き？
+          %span.recommend-bar__link
+            = " 【 #{@osusumes.first.short_title} 】"
   - else
     = link_to osusume_path(@osusumes.second), target: "_blank", class: "recommend-bar__link"  do
-      .recommend-bar
-        こちらもいかかですか？
-        %span.recommend-bar__link
-          = " 【 #{@osusumes.second.short_title} 】 "
+      .flex-center
+        .recommend-bar
+          これも好き？
+          %span.recommend-bar__link
+            = " 【 #{@osusumes.second.short_title} 】 "
     -# TODO close buttonを導入する
   .row.m-3
-    / 切り替えボタンの設定
+    -#  切り替えボタンの設定
     %button.btn.btn-primary.btn-add-novel{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button"}
       = fa_icon 'pencil'
       小説を追加する

@@ -21,5 +21,14 @@
   .field
     = f.label :osusume
     = f.number_field :osusume_id
+  .field
+    = f.label :amazon_image_link
+    = f.text_area :amazon_image_link
+  .field
+    = f.label :amazon_link
+    = f.text_area :amazon_link
+    .field
+      = f.label :amazon_kindle_link
+      = f.text_area :amazon_kindle_link
   .actions
     = f.submit 'Save'

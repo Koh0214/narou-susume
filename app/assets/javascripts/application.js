@@ -189,7 +189,7 @@ $(document).on('turbolinks:load',function(){
     //あらすじを一覧では50pxの高さ、小説個別画面では100pxの高さにした方が見やすいので以下のように実装
     // osusumes#show
     if ($(this).hasClass("novel-description-in-osusume")) {
-      var description_height = "50";
+      var description_height = "69";
     }
     // novel#show
     else {
@@ -202,13 +202,12 @@ $(document).on('turbolinks:load',function(){
       curHeight = $(this).height();
       autoHeight = $(this).css('height', 'auto').height();
       $(this).height(curHeight).animate({height: autoHeight}, 150);
-      // $(this).siblings(".fa-angle-down").removeClass("fa-angle-down").addClass("fa-angle-up");
-      $(this).siblings(".fa-angle-down").removeClass("fa-angle-down").addClass("fa-angle-up");
+      $(this).siblings(".flex-center").children(".fa-angle-down").removeClass("fa-angle-down").addClass("fa-angle-up");
     }
     //閉じる
     else {
       $(this).animate({height: description_height + "px"}, 150);
-      $(this).siblings(".fa-angle-up").removeClass("fa-angle-up").addClass("fa-angle-down");
+      $(this).siblings(".flex-center").children(".fa-angle-up").removeClass("fa-angle-up").addClass("fa-angle-down");
     }
   })
 });
