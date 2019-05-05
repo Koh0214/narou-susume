@@ -189,7 +189,7 @@ $(document).on('turbolinks:load',function(){
     //あらすじを一覧では50pxの高さ、小説個別画面では100pxの高さにした方が見やすいので以下のように実装
     // osusumes#show
     if ($(this).hasClass("novel-description-in-osusume")) {
-      var description_height = "69";
+      var description_height = "107";
     }
     // novel#show
     else {
