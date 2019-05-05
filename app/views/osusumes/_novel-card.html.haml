@@ -3,13 +3,10 @@
 - amazon_link = novel.amazon_link
 - kindle_link = novel.amazon_kindle_link
 
+
 .card.mt-1.mb-2.border-0
   .novel-card__up.flex
-    -# TODO kindleリンクがあればkindle, amazonリンクがあればamazonへ飛ばすように修正
-    = link_to amazon_link, target: "_blank"  do
-      -if amazon_image_link.present?
-        = image_tag(amazon_image_link, class: "amazon-image p-1")
-    .novel-box.p-1
+    .novel-box.p-1.pt-2
       = link_to novel_link, target: "_blank", class: "novel-box-title ml-2 mt-2"  do
         - if    index == 1
           = image_tag("/assets/images/ranking/crown-gold.png",    alt: "1位", class: "crown-image")
@@ -20,38 +17,36 @@
         - else
         #{novel.title}
         .fa.fa-external-link
-      .novel-description.novel-description-in-osusume.text-muted.px-3.mt-2
-        = simple_format(novel.description)
       .flex-center
-        .description-toggle.fa.fa-angle-down
+        .description-box
+          .novel-description.novel-description-in-osusume.text-muted.px-3.mt-2
+            = simple_format(novel.description)
+          .flex-center
+            .description-toggle.fa.fa-angle-down.mb-1
+          = link_to novel_link, target: "_blank", class: "novel-page-link mt-2 mb-2" do
+            .btn.btn-primary.mx-auto.w-75.d-block{style: "border-radius: 100px !important;"}
+              %span.font-weight-bold
+                小説を読む
+        = link_to amazon_link, target: "_blank"  do
+          -if amazon_image_link.present?
+            = image_tag(amazon_image_link, class: "amazon-image mr-3 mt-2")
   - if novel.comments.present?
     .m-0
       - random_comment = novel.comments.shuffle.first
       = render partial: "layouts/comment-card", locals: { comment: random_comment }
-  -# amazon, kindleのリンクがあるとボタンが出るので、レイアウトの調整のためにmb-2のクラスを追加
-  - if amazon_link.nil? && kindle_link.nil?
-    = link_to novel_link, target: "_blank", class: "novel-page-link mt-2 mb-2" do
-      .btn.btn-primary.mx-auto.w-75.d-block{style: "border-radius: 100px !important;"}
-        %span.font-weight-bold
-          小説を読む
-  - else
-    = link_to novel_link, target: "_blank", class: "novel-page-link mt-2" do
-      .btn.btn-primary.mx-auto.w-75.d-block{style: "border-radius: 100px !important;"}
-        %span.font-weight-bold
-          小説を読む
-  .flex-space-around
+  .flex-center
     - if amazon_link.present?
-      = link_to amazon_link, target: "_blank", class: "novel-page-link mt-2" do
+      = link_to amazon_link, target: "_blank", class: "novel-page-link mt-2 mb-1 mr-2" do
         .btn.jump-to-novel-show-btn.w-100{style: "border-radius: 100px !important;"}
           .fa.fa-amazon.mr-1
-          %span.font-weight-bold
-            amazon →
+          %span.font-weight-bold.pr-1
+            amazon
     - if kindle_link.present?
-      = link_to kindle_link, target: "_blank", class: "novel-page-link mt-2" do
+      = link_to kindle_link, target: "_blank", class: "novel-page-link mt-2 mb-1" do
         .btn.jump-to-novel-show-btn.w-100{style: "border-radius: 100px !important;"}
           .fa.fa-book.mr-1
-          %span.font-weight-bold
-            kindle →
+          %span.font-weight-bold.pr-1
+            kindle
   .card-footer.mt-1
     .white
       #{novel.id}
