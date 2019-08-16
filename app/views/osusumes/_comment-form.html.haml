@@ -1,0 +1,7 @@
+.mx-auto
+  = form_for  Comment.new(name: 'なろう好き', novel_id: novel.id), :remote => true do |f|
+    .form-group
+      = f.text_area :comment, :placeholder=>'好きなところを聞かせてください！', id: "comment-comment", class: "d-block w-100 osusume__comment-form", required: "required", style: "height: 80px;"
+    = f.hidden_field :novel_id, :value => novel.id
+    .mt-2.mb-3
+      = f.submit "コメントする", class: "btn btn-primary px-3 mx-auto font-weight-bold osusume__comment-form__button d-block osusume__comment-form__button", data: { disable_with: "コメントする"}
