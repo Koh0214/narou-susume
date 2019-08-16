@@ -44,7 +44,6 @@ body{
 }
 .card-footer{
   background-color: white !important;
-  height: 35px;
   .description{
     font-size: 10px;
     position: absolute;
@@ -109,4 +108,21 @@ body{
   text-decoration: underline;
   font-weight: bold;
   font-size: 18px;
+}
+
+.osusume__comment-form{
+  padding: 5px;
+  outline: none;
+  border: 1px solid rgb(235, 235, 235);
+  border-radius: 5px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  &:focus{
+    box-shadow: 0 0 7px #1abc9c;
+    border: 1px solid #1abc9c;
+  }
+}
+
+.osusume__comment-form__button{
+  border-radius: 100px !important;
 }
