@@ -22,15 +22,11 @@
         .fa.fa-pencil.mr-1
         レビューする →
   %hr
-  【レビュー】
-  - @novel.reviews.each do |review|
-    = render partial: "layouts/review-card", locals: { review: review}
+  - if @novel.reviews.present?
+    【レビュー】
+    - @novel.reviews.each do |review|
+      = render partial: "layouts/review-card", locals: { review: review}
 
-  %hr
-  = render partial: "layouts/popular-osusumes", locals: { osusumes: @osusumes }
-
-
-  【コメント】
   #comment-cards
     - @comments.each do |comment|
       = render partial: "comment-card", locals: { comment: comment}
@@ -41,6 +37,9 @@
   -#   レビューする →
 
   = render partial: "comment-form", locals: { comment: @comment}
+
+  %hr
+  = render partial: "layouts/popular-osusumes", locals: { osusumes: @osusumes }
 
 -# TODO modalをつけるかどうかを判断
   -# .row.m-3

@@ -28,9 +28,12 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-        format.json { render :show, status: :created, location: @comment }
-        format.js
+        # コメント書いた際に、ajaxから、小説詳細ページへ飛ぶように変更。
+        format.html { redirect_to @comment.novel, notice: 'Comment was successfully created.' }
+        format.json { render :show, status: :created, location: @comment.novel }
+        # format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        # format.json { render :show, status: :created, location: @comment }
+        # format.js
       else
         format.html { render :new }
         format.json { render json: @comment.errors, status: :unprocessable_entity }

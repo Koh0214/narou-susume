@@ -48,6 +48,7 @@
           %span.font-weight-bold.pr-1
             kindle
   .card-footer.mt-1
+    = render partial: "comment-form", locals: { comment: Comment.new(name: 'なろう好き', novel_id: novel.id), novel: novel}
     .white
       #{novel.id}
     = link_to novel_path(novel.id), target: "_blank"  do
