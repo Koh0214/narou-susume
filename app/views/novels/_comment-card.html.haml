@@ -1,21 +1,23 @@
 .comment-card.card.my-2.mx-0.border-0
-  .comment-name.text-muted.p-2
-    名前: #{comment.name}
+  .p-2
   - up_down_rate = ((comment.up.to_f) / (comment.up.to_f + comment.down.to_f)) * 100
   - if    75 <= up_down_rate
-    .px-2.pt-2.pb-0.comment.comment-level-5
+    .px-3.pt-1.pb-4.comment.comment-level-5
       #{comment.comment}
   - elsif 60 <= up_down_rate  && up_down_rate < 75
-    .px-2.pt-2.pb-0.comment.comment-level-4
+    .px-3.pt-1.pb-4.comment.comment-level-4
       #{comment.comment}
   - elsif 25 <= up_down_rate  && up_down_rate < 60
-    .px-2.pt-2.pb-0.comment.comment-level-3
+    .px-3.pt-1.pb-4.comment.comment-level-3
       #{comment.comment}
   - elsif 10 <= up_down_rate  && up_down_rate < 25
-    .px-2.pt-2.pb-0.comment.comment-level-2
+    .px-3.pt-1.pb-4.comment.comment-level-2
+      #{comment.comment}
+  - elsif up_down_rate < 10
+    .px-3.pt-1.pb-4.comment.comment-level-2
       #{comment.comment}
   - else
-    .px-2.pt-2.pb-0.comment.comment-level-1
+    .px-3.pt-1.pb-4.comment.comment-level-3
       #{comment.comment}
   .container.mb-0.mt-3.pr-1
     .row.mx-auto.d-flex.justify-content-end.comment-bottom-content
