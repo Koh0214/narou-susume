@@ -36,7 +36,7 @@
   -#   .fa.fa-pencil.mr-1
   -#   レビューする →
 
-  = render partial: "comment-form", locals: { comment: @comment}
+  = render partial: "comment-form", locals: { comment: @comment, novel: @novel}
 
   %hr
   = render partial: "layouts/popular-osusumes", locals: { osusumes: @osusumes }

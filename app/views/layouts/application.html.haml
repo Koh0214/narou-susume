@@ -17,6 +17,9 @@
     = analytics_init if Rails.env.production?
     %script{async: true, :src => "//kitchen.juicer.cc/?color=WLtsVT+JTBE="}
   %body
+    .notifications
+      - flash.each do |key, value|
+        = content_tag(:div, value, class: key)
     -# ここにGIFのヘッダー入れるというアイデア面白いな。
     .container.p-0
       = link_to image_tag("/assets/images/sma-header.png", width: 'auto', alt: "なろう廃人のすすめ", class: "sma-header header-image container-fluid p-0"), root_path
