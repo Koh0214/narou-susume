@@ -1,5 +1,5 @@
 .mx-auto
-  = form_for  Comment.new(name: 'なろう好き', novel_id: novel.id), :remote => true do |f|
+  = form_for  Comment.new(name: 'なろう好き', novel_id: novel.id), :html => {:target => '_blank'}  do |f|
     .form-group
       = f.text_area :comment, :placeholder=>'好きなところを聞かせてください！', id: "comment-comment", class: "d-block w-100 osusume__comment-form", required: "required", style: "height: 80px;"
     = f.hidden_field :novel_id, :value => novel.id
