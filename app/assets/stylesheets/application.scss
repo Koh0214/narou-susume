@@ -15,20 +15,33 @@
  *= require font-awesome
  */
 
- @import "bootstrap";
- @import "summernote-bs4";
- @import "summernote-custom-theme.min";
+@import "bootstrap";
+@import "summernote-bs4";
+@import "summernote-custom-theme.min";
 
- a:hover {
-   background-color: white !important;
- }
+a:hover {
+  background-color: white !important;
+}
 
 
- /* パソコンで見たとき*/
- .pc-header { display: block !important; }
- .sma-header { display: none !important; }
- /* スマートフォンで見たとき*/
- @media only screen and (max-width: 750px) {
- .pc-header { display: none !important; }
- .sma-header { display: block !important; }
- }
+/* パソコンで見たとき*/
+.pc-header { display: block !important; }
+.sma-header { display: none !important; }
+/* スマートフォンで見たとき*/
+@media only screen and (max-width: 750px) {
+.pc-header { display: none !important; }
+.sma-header { display: block !important; }
+}
+
+.notifications {
+  color: $white;
+  text-align: center;
+
+  .notice {
+    background-color: lightBlue;
+  }
+
+  .alert {
+    background-color: alert_orange;
+  }
+}
