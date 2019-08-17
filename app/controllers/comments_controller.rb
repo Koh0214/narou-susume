@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         # コメント書いた際に、ajaxから、小説詳細ページへ飛ぶように変更。
-        format.html { redirect_to @comment.novel, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @comment.novel, notice: 'コメントありがとうございます！！' }
         format.json { render :show, status: :created, location: @comment.novel }
         # format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
         # format.json { render :show, status: :created, location: @comment }

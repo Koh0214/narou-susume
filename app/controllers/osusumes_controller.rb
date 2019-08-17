@@ -38,7 +38,7 @@ class OsusumesController < ApplicationController
 
     respond_to do |format|
       if @osusume.save
-        format.html { redirect_to @osusume, notice: 'Osusume was successfully created.' }
+        format.html { redirect_to @osusume, notice: 'おすすめジャンルが作成されました！' }
         format.json { render :show, status: :created, location: @osusume }
       else
         format.html { render :new }
