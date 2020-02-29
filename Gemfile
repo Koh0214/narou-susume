@@ -49,7 +49,7 @@ gem 'google-analytics-rails'
 gem 'summernote-rails', '~> 0.8.10.0'
 gem 'simple_form', '~> 3.5.1'
 
-gem 'rake', '12.3.1'
+gem 'rake', '12.3.3'
 
 gem 'meta_request', group: :development
 
